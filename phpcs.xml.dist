@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<ruleset name="AIV-web Theme">
+	<description>WordPress Coding Standards for the AIV-web theme.</description>
+
+	<file>.</file>
+	<file>inc</file>
+
+	<arg name="basepath" value="."/>
+	<arg name="extensions" value="php"/>
+	<arg name="parallel" value="8"/>
+	<arg name="colors"/>
+
+	<exclude-pattern>vendor/*</exclude-pattern>
+	<exclude-pattern>node_modules/*</exclude-pattern>
+
+	<config name="testVersion" value="8.1-"/>
+
+	<rule ref="WordPress"/>
+	<rule ref="WordPress-Extra"/>
+	<rule ref="WordPress-Docs"/>
+	<rule ref="PHPCompatibilityWP"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="aiv-web"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

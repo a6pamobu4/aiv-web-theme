@@ -1,0 +1,22 @@
+{
+	"name": "aiv-web/aiv-web-theme",
+	"description": "Standalone WordPress theme for the AIV-web agency website.",
+	"type": "wordpress-theme",
+	"license": "proprietary",
+	"require": {},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"wp-coding-standards/wpcs": "^3.2"
+	},
+	"scripts": {
+		"lint:php": "phpcs",
+		"fix:php": "phpcbf"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"sort-packages": true
+	}
+}

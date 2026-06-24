@@ -1,0 +1,13 @@
+{
+	"name": "aiv-web-theme",
+	"version": "0.1.0",
+	"private": true,
+	"description": "SCSS build workflow for the AIV-web WordPress theme.",
+	"scripts": {
+		"start": "sass --watch --style=expanded --source-map assets/scss:assets/css",
+		"build": "sass --style=compressed --no-source-map assets/scss:assets/css"
+	},
+	"devDependencies": {
+		"sass": "^1.89.2"
+	}
+}

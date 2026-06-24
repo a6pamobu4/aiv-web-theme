@@ -1,0 +1,19 @@
+/*! Generated from assets/scss/editor.scss. Do not edit assets/css/editor.css directly. */
+.editor-styles-wrapper {
+	font-family: var(--wp--preset--font-family--system-sans);
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: var(--wp--custom--line-height--body);
+}
+
+.editor-styles-wrapper .wp-block {
+	max-width: var(--wp--style--global--content-size);
+}
+
+.editor-styles-wrapper .wp-block[data-align="wide"] {
+	max-width: var(--wp--style--global--wide-size);
+}
+
+.editor-styles-wrapper .wp-block[data-align="full"] {
+	max-width: none;
+}
+
