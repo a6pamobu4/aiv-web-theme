@@ -1,12 +1,28 @@
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull">
-	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
-	<div class="wp-block-group">
-		<!-- wp:site-logo {"width":48,"shouldSyncIcon":true} /-->
-		<!-- wp:site-title {"level":0} /-->
-		<!-- wp:navigation {"layout":{"type":"flex","justifyContent":"right"},"overlayMenu":"mobile","ariaLabel":"Primary menu"} /-->
+<!-- wp:group {"align":"full","className":"aiv-site-header","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull aiv-site-header">
+	<!-- wp:group {"className":"aiv-site-header__inner","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group aiv-site-header__inner">
+		<!-- wp:group {"className":"aiv-site-header__brand","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+		<div class="wp-block-group aiv-site-header__brand">
+			<!-- wp:site-title {"level":0,"className":"aiv-site-header__title"} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:navigation {"overlayMenu":"mobile","ariaLabel":"Primary menu","className":"aiv-site-header__nav","layout":{"type":"flex","justifyContent":"right"}} -->
+			<!-- wp:navigation-link {"label":"Услуги","url":"#services"} /-->
+			<!-- wp:navigation-link {"label":"Процесс","url":"#process"} /-->
+			<!-- wp:navigation-link {"label":"FAQ","url":"#faq"} /-->
+			<!-- wp:navigation-link {"label":"Контакт","url":"#contact"} /-->
+		<!-- /wp:navigation -->
+
+		<!-- wp:buttons {"className":"aiv-site-header__actions"} -->
+		<div class="wp-block-buttons aiv-site-header__actions">
+			<!-- wp:button {"className":"is-style-aiv-outline"} -->
+			<div class="wp-block-button is-style-aiv-outline"><a class="wp-block-button__link wp-element-button" href="#contact">Обсудить проект</a></div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
 	</div>
 	<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
-

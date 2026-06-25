@@ -1,0 +1,59 @@
+.aiv-floating-contacts {
+	align-items: flex-end;
+	bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	position: fixed;
+	right: 1rem;
+	z-index: 80;
+}
+
+.aiv-floating-contacts__link {
+	background-color: var(--wp--preset--color--base);
+	border: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 18%, transparent);
+	border-radius: 999px;
+	color: var(--wp--preset--color--contrast);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	line-height: 1;
+	padding: 0.85rem 1rem;
+	text-decoration: none;
+	transition:
+		background-color 180ms ease,
+		border-color 180ms ease,
+		color 180ms ease,
+		transform 180ms ease;
+}
+
+.aiv-floating-contacts__link--primary {
+	background-color: var(--wp--preset--color--contrast);
+	border-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+}
+
+.aiv-floating-contacts__link:hover,
+.aiv-floating-contacts__link:focus-visible {
+	border-color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	transform: translateY(-1px);
+}
+
+.aiv-floating-contacts__link:focus-visible {
+	outline: 2px solid var(--wp--preset--color--contrast);
+	outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+	.aiv-floating-contacts {
+		align-items: stretch;
+		bottom: 0.75rem;
+		left: 0.75rem;
+		right: 0.75rem;
+	}
+
+	.aiv-floating-contacts__link {
+		padding: 0.8rem 0.9rem;
+		text-align: center;
+	}
+}

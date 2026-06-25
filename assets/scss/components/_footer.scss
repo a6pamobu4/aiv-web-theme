@@ -1,0 +1,39 @@
+.aiv-site-footer {
+	border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 14%, transparent);
+	padding-bottom: var(--wp--preset--spacing--60);
+	padding-top: var(--wp--preset--spacing--60);
+}
+
+.aiv-site-footer__inner {
+	gap: var(--wp--preset--spacing--50);
+}
+
+.aiv-site-footer__brand {
+	max-width: 22rem;
+}
+
+.aiv-site-footer__title a {
+	color: var(--wp--preset--color--contrast);
+	font-weight: 800;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.aiv-site-footer__brand p,
+.aiv-site-footer__copyright {
+	color: var(--wp--preset--color--muted);
+}
+
+.aiv-site-footer__nav {
+	font-weight: 600;
+}
+
+.aiv-site-footer__nav a {
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+}
+
+.aiv-site-footer__nav a:hover,
+.aiv-site-footer__nav a:focus-visible {
+	text-decoration: underline;
+}
