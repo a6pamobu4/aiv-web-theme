@@ -16,8 +16,30 @@ html {
 }
 
 body {
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--muted);
 	margin: 0;
 	text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--wp--preset--color--contrast);
+}
+
+p,
+li,
+figcaption {
+	color: inherit;
+}
+
+strong,
+b {
+	color: var(--wp--preset--color--contrast);
 }
 
 img,
@@ -58,7 +80,6 @@ select,
 textarea {
 	background-color: var(--wp--preset--color--base);
 	border: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 22%, transparent);
-	border-radius: var(--wp--custom--border--radius--small);
 	color: var(--wp--preset--color--contrast);
 	padding: 0.7rem 0.85rem;
 	width: 100%;
@@ -83,6 +104,18 @@ label {
 	margin-block-start: 0;
 }
 
+:where(.wp-site-blocks, .wp-site-blocks > main, .alignfull) {
+	max-width: none;
+	width: 100%;
+}
+
+:where(.alignwide) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--wp--style--global--wide-size);
+	width: 100%;
+}
+
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -98,7 +131,6 @@ label {
 
 .screen-reader-text:focus {
 	background-color: var(--wp--preset--color--base);
-	border-radius: var(--wp--custom--border--radius--small);
 	box-shadow: 0 0 0 2px var(--wp--preset--color--primary);
 	clip: auto;
 	clip-path: none;

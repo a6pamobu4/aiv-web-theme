@@ -27,8 +27,8 @@
 
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
-			<!-- wp:button -->
-			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#telegram-todo"><?php echo esc_html_x( 'Обсудить проект', 'Final CTA button', 'aiv-web' ); ?></a></div>
+			<!-- wp:button {"className":"aiv-button aiv-button--primary"} -->
+			<div class="wp-block-button aiv-button aiv-button--primary"><a class="wp-block-button__link wp-element-button" href="#telegram-todo"><?php echo esc_html_x( 'Обсудить проект', 'Final CTA button', 'aiv-web' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

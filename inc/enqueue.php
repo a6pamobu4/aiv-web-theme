@@ -18,8 +18,13 @@ function aiv_web_enqueue_assets(): void {
 	$theme_version = wp_get_theme()->get( 'Version' );
 	$script_paths  = array(
 		'aiv-web-header-scroll' => 'assets/js/header-scroll.js',
-		'aiv-web-scroll-text'   => 'assets/js/scroll-text.js',
 	);
+
+	if ( is_front_page() ) {
+		$script_paths['aiv-web-scroll-text']     = 'assets/js/scroll-text.js';
+		$script_paths['aiv-web-hero-canvas']     = 'assets/js/hero-canvas.js';
+		$script_paths['aiv-web-hero-typewriter'] = 'assets/js/hero-typewriter.js';
+	}
 
 	wp_enqueue_style(
 		'aiv-web-style',
