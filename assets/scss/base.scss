@@ -5,13 +5,17 @@
 @use "components/floating-contacts";
 @use "sections/home";
 
-*,
-*::before,
-*::after {
+* {
 	box-sizing: border-box;
+
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
 }
 
 html {
+	overflow-x: clip;
 	scroll-behavior: smooth;
 }
 
@@ -19,6 +23,7 @@ body {
 	background-color: var(--wp--preset--color--base);
 	color: var(--wp--preset--color--muted);
 	margin: 0;
+	overflow-x: clip;
 	text-rendering: optimizeSpeed;
 }
 
@@ -60,11 +65,11 @@ select {
 
 a {
 	text-underline-offset: 0.18em;
-}
 
-a:hover,
-a:focus {
-	text-decoration-thickness: 0.12em;
+	&:hover,
+	&:focus {
+		text-decoration-thickness: 0.12em;
+	}
 }
 
 button,
@@ -127,35 +132,41 @@ label {
 	position: absolute;
 	width: 1px;
 	word-wrap: normal;
-}
 
-.screen-reader-text:focus {
-	background-color: var(--wp--preset--color--base);
-	box-shadow: 0 0 0 2px var(--wp--preset--color--primary);
-	clip: auto;
-	clip-path: none;
-	color: var(--wp--preset--color--contrast);
-	display: block;
-	font-size: 0.875rem;
-	font-weight: 700;
-	height: auto;
-	left: 1rem;
-	line-height: 1.4;
-	padding: 0.75rem 1rem;
-	position: fixed;
-	text-decoration: none;
-	top: 1rem;
-	width: auto;
-	z-index: 100000;
+	&:focus {
+		background-color: var(--wp--preset--color--base);
+		box-shadow: 0 0 0 2px var(--wp--preset--color--primary);
+		clip: auto;
+		clip-path: none;
+		color: var(--wp--preset--color--contrast);
+		display: block;
+		font-size: 0.875rem;
+		font-weight: 700;
+		height: auto;
+		left: 1rem;
+		line-height: 1.4;
+		padding: 0.75rem 1rem;
+		position: fixed;
+		text-decoration: none;
+		top: 1rem;
+		width: auto;
+		z-index: 100000;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
+	* {
 		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
 		scroll-behavior: auto !important;
 		transition-duration: 0.01ms !important;
+
+		&::before,
+		&::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			scroll-behavior: auto !important;
+			transition-duration: 0.01ms !important;
+		}
 	}
 }

@@ -9,5 +9,8 @@
 	},
 	"devDependencies": {
 		"sass": "^1.89.2"
+	},
+	"dependencies": {
+		"vanta": "^0.5.24"
 	}
 }

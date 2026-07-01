@@ -33,3 +33,20 @@ function aiv_web_get_post_meta(): string {
 		$author
 	);
 }
+
+/**
+ * Render the site copyright line.
+ */
+function aiv_web_render_copyright_shortcode(): string {
+	return sprintf(
+		'<p class="has-small-font-size aiv-site-footer__copyright">%s</p>',
+		esc_html(
+			sprintf(
+				/* translators: %s: current year. */
+				__( '© 2014 - %s • AIV-web — сайты, поддержка и продвижение', 'aiv-web' ),
+				date_i18n( 'Y' )
+			)
+		)
+	);
+}
+add_shortcode( 'aiv_web_copyright', 'aiv_web_render_copyright_shortcode' );

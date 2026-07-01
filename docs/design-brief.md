@@ -41,8 +41,6 @@ The mood is technology + design + performance. The site should look sharp, delib
 - No Bootstrap.
 - No Tailwind.
 - No jQuery.
-- No GSAP.
-- No heavy animation libraries.
 - No external fonts.
 - No external icons.
 - Use SCSS as source of truth.
@@ -50,9 +48,4 @@ The mood is technology + design + performance. The site should look sharp, delib
 - Use lightweight vanilla JavaScript only where CSS cannot cover the interaction.
 - Keep Core Web Vitals in mind: avoid layout shifts, blocking scripts, large media, and expensive scroll handlers.
 
-## Reference Sources
 
-- WAM Digital: https://wamdigital.com/
-- Wibify: https://wibify.agency/en
-
-References are for interaction patterns, layout logic, visual hierarchy, and mood only. Do not copy text, images, icons, logos, brand assets, animations, or pixel-level layouts.

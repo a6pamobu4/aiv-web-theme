@@ -1,26 +1,27 @@
 <!-- wp:group {"align":"full","className":"aiv-site-footer","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull aiv-site-footer">
-	<!-- wp:group {"align":"wide","className":"aiv-site-footer__inner","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
+	<!-- wp:group {"align":"wide","className":"aiv-site-footer__inner","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignwide aiv-site-footer__inner">
-		<!-- wp:group {"className":"aiv-site-footer__brand","layout":{"type":"constrained"}} -->
-		<div class="wp-block-group aiv-site-footer__brand">
-			<!-- wp:site-title {"level":0,"className":"aiv-site-footer__title"} /-->
-			<!-- wp:paragraph {"fontSize":"small"} -->
-			<p class="has-small-font-size">Сайты, SEO и развитие digital-проектов.</p>
-			<!-- /wp:paragraph -->
+		<!-- wp:group {"className":"aiv-site-footer__top","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+		<div class="wp-block-group aiv-site-footer__top">
+			<!-- wp:group {"className":"aiv-site-footer__brand","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+			<div class="wp-block-group aiv-site-footer__brand">
+				<!-- wp:site-logo {"width":220,"shouldSyncIcon":false,"className":"aiv-site-footer__logo"} /-->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:navigation {"__unstableLocation":"primary","overlayMenu":"never","ariaLabel":"Footer primary menu","className":"aiv-site-footer__nav aiv-site-footer__nav--primary","layout":{"type":"flex","justifyContent":"center"}} /-->
+
+			<!-- wp:navigation {"__unstableLocation":"footer","overlayMenu":"never","ariaLabel":"Footer legal menu","className":"aiv-site-footer__nav aiv-site-footer__nav--legal","layout":{"type":"flex","justifyContent":"right"}} -->
+				<!-- wp:navigation-link {"label":"Политика конфиденциальности","url":"#privacy"} /-->
+				<!-- wp:navigation-link {"label":"Пользовательское соглашение","url":"#terms"} /-->
+			<!-- /wp:navigation -->
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"Footer menu","fontSize":"small","className":"aiv-site-footer__nav"} -->
-			<!-- wp:navigation-link {"label":"Услуги","url":"#services"} /-->
-			<!-- wp:navigation-link {"label":"Процесс","url":"#process"} /-->
-			<!-- wp:navigation-link {"label":"FAQ","url":"#faq"} /-->
-			<!-- wp:navigation-link {"label":"Контакт","url":"#contact"} /-->
-		<!-- /wp:navigation -->
-
-		<!-- wp:paragraph {"fontSize":"small","className":"aiv-site-footer__copyright"} -->
-		<p class="has-small-font-size aiv-site-footer__copyright">© AIV-web</p>
-		<!-- /wp:paragraph -->
+		<!-- wp:shortcode -->
+		[aiv_web_copyright]
+		<!-- /wp:shortcode -->
 	</div>
 	<!-- /wp:group -->
 </div>

@@ -12,7 +12,7 @@
 <!-- wp:group {"tagName":"section","align":"full","className":"aiv-home-hero","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull aiv-home-hero">
 	<!-- wp:html -->
-	<canvas class="aiv-home-hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+	<div class="aiv-home-hero__canvas" data-hero-canvas aria-hidden="true"></div>
 	<!-- /wp:html -->
 
 	<!-- wp:group {"align":"wide","className":"aiv-home-hero__inner","layout":{"type":"constrained"}} -->
@@ -48,22 +48,25 @@
 		<!-- /wp:paragraph -->
 
 		<!-- wp:html -->
-		<div class="hero-actions"><a href="#contact" class="shine-btn" data-cta="hero-project-start"><span>Обсудить проект<!-- --> &nbsp;<!-- -->→</span></a><a href="#work" class="btn btn-secondary" data-cta="hero-works-anchor"><span class="btn-dot" aria-hidden="true"></span><span>Selected work</span></a></div>
+		<div class="hero-actions"><a href="#contact" class="shine-btn" data-cta="hero-project-start"><span>Обсудить проект<!-- --> &nbsp;<!-- -->→</span></a><a href="#work" class="shine-btn" data-cta="hero-works-anchor"><span><span class="btn-dot" aria-hidden="true"></span>Selected work</span></a></div>
 		<!-- /wp:html -->
 
-		<!-- wp:group {"className":"aiv-home-hero__proof","layout":{"type":"grid","minimumColumnWidth":"12rem"}} -->
-		<div class="wp-block-group aiv-home-hero__proof">
-			<!-- wp:paragraph {"className":"aiv-home-hero__proof-item"} -->
-			<p class="aiv-home-hero__proof-item"><strong><?php echo esc_html_x( 'CWV-first', 'Homepage hero proof value', 'aiv-web' ); ?></strong><span><?php echo esc_html_x( 'Подход к скорости', 'Homepage hero proof label', 'aiv-web' ); ?></span></p>
-			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"aiv-home-hero__proof-item"} -->
-			<p class="aiv-home-hero__proof-item"><strong><?php echo esc_html_x( 'SEO-ready', 'Homepage hero proof value', 'aiv-web' ); ?></strong><span><?php echo esc_html_x( 'Структура сайта', 'Homepage hero proof label', 'aiv-web' ); ?></span></p>
-			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"aiv-home-hero__proof-item"} -->
-			<p class="aiv-home-hero__proof-item"><strong><?php echo esc_html_x( 'CMS', 'Homepage hero proof value', 'aiv-web' ); ?></strong><span><?php echo esc_html_x( 'Удобное управление', 'Homepage hero proof label', 'aiv-web' ); ?></span></p>
-			<!-- /wp:paragraph -->
+		<!-- wp:html -->
+		<div class="aiv-home-hero__proof" aria-label="<?php echo esc_attr_x( 'Ключевые преимущества AIV-web', 'Homepage hero proof list label', 'aiv-web' ); ?>">
+			<div class="aiv-home-hero__proof-item">
+				<strong data-counter-value="12"><?php echo esc_html_x( '12', 'Homepage hero proof value', 'aiv-web' ); ?></strong>
+				<span><?php echo esc_html_x( 'лет опыта', 'Homepage hero proof label', 'aiv-web' ); ?></span>
+			</div>
+			<div class="aiv-home-hero__proof-item">
+				<strong data-counter-value="100" data-counter-suffix="+"><?php echo esc_html_x( '100+', 'Homepage hero proof value', 'aiv-web' ); ?></strong>
+				<span><?php echo esc_html_x( 'сайтов', 'Homepage hero proof label', 'aiv-web' ); ?></span>
+			</div>
+			<div class="aiv-home-hero__proof-item">
+				<strong data-counter-value="90" data-counter-suffix="+"><?php echo esc_html_x( '90+', 'Homepage hero proof value', 'aiv-web' ); ?></strong>
+				<span><?php echo esc_html_x( 'PageSpeed', 'Homepage hero proof label', 'aiv-web' ); ?></span>
+			</div>
 		</div>
-		<!-- /wp:group -->
+		<!-- /wp:html -->
 	</div>
 	<!-- /wp:group -->
 </section>

@@ -18,99 +18,75 @@
 		border-color 180ms ease,
 		color 180ms ease,
 		transform 180ms ease;
-}
 
-.wp-block-button__link::before,
-.wp-element-button::before {
-	background-color: var(--wp--preset--color--base);
-	content: "";
-	inset: 0;
-	position: absolute;
-	transform: scaleX(0);
-	transform-origin: right center;
-	transition: transform 240ms ease;
-	z-index: 0;
-}
+	&::before {
+		background-color: var(--wp--preset--color--base);
+		content: "";
+		inset: 0;
+		position: absolute;
+		transform: scaleX(0);
+		transform-origin: right center;
+		transition: transform 240ms ease;
+		z-index: 0;
+	}
 
-.wp-block-button__link::after,
-.wp-element-button::after {
-	content: "→";
-	display: inline-block;
-	line-height: 1;
-	position: relative;
-	transition: transform 180ms ease;
-	z-index: 1;
-}
+	&::after {
+		content: "→";
+		display: inline-block;
+		line-height: 1;
+		position: relative;
+		transition: transform 180ms ease;
+		z-index: 1;
+	}
 
-.wp-block-button__link,
-.wp-block-button__link > *,
-.wp-element-button,
-.wp-element-button > * {
-	position: relative;
-	z-index: 1;
-}
+	&,
+	& > * {
+		position: relative;
+		z-index: 1;
+	}
 
-.wp-block-button__link:hover,
-.wp-block-button__link:focus-visible,
-.wp-element-button:hover,
-.wp-element-button:focus-visible {
-	color: var(--wp--preset--color--contrast);
-	text-decoration: none;
-	transform: translateY(-1px);
-}
+	&:hover,
+	&:focus-visible {
+		color: var(--wp--preset--color--contrast);
+		text-decoration: none;
+		transform: translateY(-1px);
+	}
 
-.wp-block-button__link:hover::before,
-.wp-block-button__link:focus-visible::before,
-.wp-element-button:hover::before,
-.wp-element-button:focus-visible::before {
-	transform: scaleX(1);
-	transform-origin: left center;
-}
+	&:hover::before,
+	&:focus-visible::before {
+		transform: scaleX(1);
+		transform-origin: left center;
+	}
 
-.wp-block-button__link:hover::after,
-.wp-block-button__link:focus-visible::after,
-.wp-element-button:hover::after,
-.wp-element-button:focus-visible::after {
-	transform: translateX(0.18rem);
-}
+	&:hover::after,
+	&:focus-visible::after {
+		transform: translateX(0.18rem);
+	}
 
-.wp-block-button__link:focus-visible,
-.wp-element-button:focus-visible {
-	outline: 2px solid var(--wp--preset--color--contrast);
-	outline-offset: 3px;
+	&:focus-visible {
+		outline: 2px solid var(--wp--preset--color--contrast);
+		outline-offset: 3px;
+	}
 }
-
 .aiv-button--secondary .wp-block-button__link,
 .aiv-button--secondary .wp-element-button,
 .is-style-aiv-outline .wp-block-button__link,
 .is-style-aiv-outline .wp-element-button {
 	background-color: transparent;
 	color: var(--wp--preset--color--contrast);
-}
 
-.aiv-button--secondary .wp-block-button__link::before,
-.aiv-button--secondary .wp-element-button::before,
-.is-style-aiv-outline .wp-block-button__link::before,
-.is-style-aiv-outline .wp-element-button::before {
-	background-color: var(--wp--preset--color--contrast);
-}
+	&::before {
+		background-color: var(--wp--preset--color--contrast);
+	}
 
-.aiv-button--secondary .wp-block-button__link::after,
-.aiv-button--secondary .wp-element-button::after,
-.is-style-aiv-outline .wp-block-button__link::after,
-.is-style-aiv-outline .wp-element-button::after {
-	content: none;
-}
+	&::after {
+		content: none;
+	}
 
-.aiv-button--secondary .wp-block-button__link:hover,
-.aiv-button--secondary .wp-block-button__link:focus-visible,
-.aiv-button--secondary .wp-element-button:hover,
-.aiv-button--secondary .wp-element-button:focus-visible,
-.is-style-aiv-outline .wp-block-button__link:hover,
-.is-style-aiv-outline .wp-block-button__link:focus-visible,
-.is-style-aiv-outline .wp-element-button:hover,
-.is-style-aiv-outline .wp-element-button:focus-visible {
-	color: var(--wp--preset--color--base);
+	&:hover,
+	&:focus-visible {
+		color: var(--wp--preset--color--base);
+	}
 }
 
 .aiv-button--header .wp-block-button__link,
@@ -125,19 +101,16 @@
 	background-color: var(--wp--preset--color--contrast);
 	border-color: var(--wp--preset--color--contrast);
 	color: var(--wp--preset--color--base);
-}
 
-.aiv-final-cta .aiv-button--primary .wp-block-button__link::before,
-.aiv-final-cta .aiv-button--primary .wp-element-button::before {
-	background-color: var(--wp--preset--color--base);
-}
+	&::before {
+		background-color: var(--wp--preset--color--base);
+	}
 
-.aiv-final-cta .aiv-button--primary .wp-block-button__link:hover,
-.aiv-final-cta .aiv-button--primary .wp-block-button__link:focus-visible,
-.aiv-final-cta .aiv-button--primary .wp-element-button:hover,
-.aiv-final-cta .aiv-button--primary .wp-element-button:focus-visible {
-	color: var(--wp--preset--color--contrast);
-	outline-color: var(--wp--preset--color--contrast);
+	&:hover,
+	&:focus-visible {
+		color: var(--wp--preset--color--contrast);
+		outline-color: var(--wp--preset--color--contrast);
+	}
 }
 
 @property --shine-btn-angle {
@@ -198,67 +171,67 @@
 	transition:
 		box-shadow 220ms ease,
 		transform 220ms ease;
-}
 
-.shine-btn::before,
-.shine-btn::after {
-	content: "";
-	inset: 0;
-	pointer-events: none;
-	position: absolute;
-}
+	&::before,
+	&::after {
+		content: "";
+		inset: 0;
+		pointer-events: none;
+		position: absolute;
+	}
 
-.shine-btn::before {
-	animation: shine-btn-sweep 3.2s ease-in-out infinite;
-	background:
-		linear-gradient(
-			110deg,
-			transparent 0%,
-			transparent 36%,
-			rgba(255, 255, 255, 0.26) 48%,
-			rgba(255, 255, 255, 0.92) 50%,
-			rgba(255, 255, 255, 0.26) 52%,
-			transparent 64%,
-			transparent 100%
-		);
-	mix-blend-mode: screen;
-	opacity: 0.7;
-	transform: translateX(-135%) skewX(-18deg);
-	transition: opacity 220ms ease;
-	z-index: 1;
-}
+	&::before {
+		animation: shine-btn-sweep 3.2s ease-in-out infinite;
+		background:
+			linear-gradient(
+				110deg,
+				transparent 0%,
+				transparent 36%,
+				rgba(255, 255, 255, 0.26) 48%,
+				rgba(255, 255, 255, 0.92) 50%,
+				rgba(255, 255, 255, 0.26) 52%,
+				transparent 64%,
+				transparent 100%
+			);
+		mix-blend-mode: screen;
+		opacity: 0.7;
+		transform: translateX(-135%) skewX(-18deg);
+		transition: opacity 220ms ease;
+		z-index: 1;
+	}
 
-.shine-btn::after {
-	box-shadow:
-		inset 0 0 22px rgba(255, 255, 255, 0.16),
-		inset 0 1px 0 rgba(255, 255, 255, 0.22);
-	z-index: 0;
-}
+	&::after {
+		box-shadow:
+			inset 0 0 22px rgba(255, 255, 255, 0.16),
+			inset 0 1px 0 rgba(255, 255, 255, 0.22);
+		z-index: 0;
+	}
 
-.shine-btn span {
-	position: relative;
-	text-shadow: 0 1px 18px rgba(255, 255, 255, 0.38);
-	z-index: 2;
-}
+	span {
+		position: relative;
+		text-shadow: 0 1px 18px rgba(255, 255, 255, 0.38);
+		z-index: 2;
+	}
 
-.shine-btn:hover,
-.shine-btn:focus-visible {
-	box-shadow:
-		inset 0 0 0 1px rgba(255, 255, 255, 0.24),
-		0 0 0 1px rgba(0, 0, 0, 0.08),
-		0 18px 48px rgba(0, 0, 0, 0.28);
-	transform: translateY(-1px);
-}
+	&:hover,
+	&:focus-visible {
+		box-shadow:
+			inset 0 0 0 1px rgba(255, 255, 255, 0.24),
+			0 0 0 1px rgba(0, 0, 0, 0.08),
+			0 18px 48px rgba(0, 0, 0, 0.28);
+		transform: translateY(-1px);
+	}
 
-.shine-btn:hover::before,
-.shine-btn:focus-visible::before {
-	animation-duration: 1.35s;
-	opacity: 1;
-}
+	&:hover::before,
+	&:focus-visible::before {
+		animation-duration: 1.35s;
+		opacity: 1;
+	}
 
-.shine-btn:focus-visible {
-	outline: 2px solid var(--wp--preset--color--contrast);
-	outline-offset: 4px;
+	&:focus-visible {
+		outline: 2px solid var(--wp--preset--color--contrast);
+		outline-offset: 4px;
+	}
 }
 
 .btn {
@@ -286,20 +259,20 @@
 	border: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 13%, transparent);
 	box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
 	color: var(--wp--preset--color--contrast);
-}
 
-.btn-secondary:hover,
-.btn-secondary:focus-visible {
-	background-color: var(--wp--preset--color--contrast);
-	border-color: var(--wp--preset--color--contrast);
-	color: var(--wp--preset--color--base);
-	text-decoration: none;
-	transform: translateY(-1px);
-}
+	&:hover,
+	&:focus-visible {
+		background-color: var(--wp--preset--color--contrast);
+		border-color: var(--wp--preset--color--contrast);
+		color: var(--wp--preset--color--base);
+		text-decoration: none;
+		transform: translateY(-1px);
+	}
 
-.btn-secondary:focus-visible {
-	outline: 2px solid var(--wp--preset--color--contrast);
-	outline-offset: 4px;
+	&:focus-visible {
+		outline: 2px solid var(--wp--preset--color--contrast);
+		outline-offset: 4px;
+	}
 }
 
 .btn-dot {
@@ -308,15 +281,19 @@
 	height: 0.45rem;
 	position: relative;
 	width: 0.45rem;
-}
 
-.btn-dot::after {
-	animation: btn-dot-pulse 1.8s ease-out infinite;
-	border: 1px solid currentColor;
-	content: "";
-	inset: -0.35rem;
-	opacity: 0.32;
-	position: absolute;
+	&::after {
+		animation: btn-dot-pulse 1.8s ease-out infinite;
+		border: 1px solid currentColor;
+		content: "";
+		inset: -0.35rem;
+		opacity: 0.32;
+		position: absolute;
+	}
+
+	&::before {
+		display: none;
+	}
 }
 
 @keyframes shine-btn-border {
@@ -414,91 +391,99 @@
 	padding: 1.1rem 2rem;
 	transition: var(--transition);
 	transition-property: --gradient-angle-offset, --gradient-percent, --gradient-shine;
-}
 
-.shine-btn::before,
-.shine-btn::after,
-.shine-btn span::before {
-	box-shadow: none;
-	content: "";
-	inset: auto;
-	inset-block-start: 50%;
-	inset-inline-start: 50%;
-	pointer-events: none;
-	position: absolute;
-	transform: none;
-	translate: -50% -50%;
-	z-index: 0;
-}
+	&::before,
+	&::after {
+		box-shadow: none;
+		content: "";
+		inset: auto;
+		inset-block-start: 50%;
+		inset-inline-start: 50%;
+		pointer-events: none;
+		position: absolute;
+		transform: none;
+		translate: -50% -50%;
+		z-index: 0;
+	}
 
-.shine-btn::before {
-	--position: 2px;
-	--size: calc(100% - var(--shadow-size) * 3);
-	--space: calc(var(--position) * 2);
-	animation: var(--animation) var(--duration), var(--animation) calc(var(--duration) / 0.4) reverse paused;
-	animation-composition: add;
-	background: radial-gradient(
-		circle at var(--position) var(--position),
-		var(--shine-btn-dot) calc(var(--position) / 4),
-		transparent 0
-	) padding-box;
-	background-repeat: space;
-	background-size: var(--space) var(--space);
-	height: var(--size);
-	mask-image: conic-gradient(from calc(var(--gradient-angle) + 45deg), black, transparent 10% 90%, black);
-	opacity: 0.4;
-	width: var(--size);
-}
+	&::before {
+		--position: 2px;
+		--size: calc(100% - var(--shadow-size) * 3);
+		--space: calc(var(--position) * 2);
+		animation: var(--animation) var(--duration), var(--animation) calc(var(--duration) / 0.4) reverse paused;
+		animation-composition: add;
+		background: radial-gradient(
+			circle at var(--position) var(--position),
+			var(--shine-btn-dot) calc(var(--position) / 4),
+			transparent 0
+		) padding-box;
+		background-repeat: space;
+		background-size: var(--space) var(--space);
+		height: var(--size);
+		mask-image: conic-gradient(from calc(var(--gradient-angle) + 45deg), black, transparent 10% 90%, black);
+		opacity: 0.4;
+		width: var(--size);
+	}
 
-.shine-btn::after {
-	animation: shimmer var(--duration) linear infinite, shimmer calc(var(--duration) / 0.4) linear reverse paused;
-	animation-composition: add;
-	aspect-ratio: 1;
-	background: linear-gradient(-50deg, transparent, var(--shine-btn-highlight), transparent);
-	mask-image: radial-gradient(circle at bottom, transparent 40%, #000);
-	opacity: 0.18;
-	width: 100%;
-}
+	&::after {
+		animation: shimmer var(--duration) linear infinite, shimmer calc(var(--duration) / 0.4) linear reverse paused;
+		animation-composition: add;
+		aspect-ratio: 1;
+		background: linear-gradient(-50deg, transparent, var(--shine-btn-highlight), transparent);
+		mask-image: radial-gradient(circle at bottom, transparent 40%, #000);
+		opacity: 0.18;
+		width: 100%;
+	}
 
-.shine-btn span {
-	align-items: center;
-	display: inline-flex;
-	gap: 0.55rem;
-	position: relative;
-	text-shadow: none;
-	z-index: 2;
-}
+	span {
+		align-items: center;
+		display: inline-flex;
+		gap: 0.55rem;
+		position: relative;
+		text-shadow: none;
+		z-index: 2;
 
-.shine-btn span::before {
-	--size: calc(100% + 4rem);
-	animation: calc(var(--duration) * 1.5) breathe linear infinite;
-	box-shadow: inset 0 -1ex 2rem 4px var(--shine-btn-highlight);
-	height: var(--size);
-	opacity: 0;
-	transition: opacity var(--transition);
-	width: var(--size);
-}
+		&::before {
+			--size: calc(100% + 4rem);
+			animation: calc(var(--duration) * 1.5) breathe linear infinite;
+			box-shadow: inset 0 -1ex 2rem 4px var(--shine-btn-highlight);
+			content: "";
+			height: var(--size);
+			inset: auto;
+			inset-block-start: 50%;
+			inset-inline-start: 50%;
+			opacity: 0;
+			pointer-events: none;
+			position: absolute;
+			transform: none;
+			transition: opacity var(--transition);
+			translate: -50% -50%;
+			width: var(--size);
+			z-index: 0;
+		}
+	}
 
-.shine-btn:active {
-	translate: 0 1px;
-}
+	&:active {
+		translate: 0 1px;
+	}
 
-.shine-btn:is(:hover, :focus-visible) {
-	--gradient-angle-offset: 95deg;
-	--gradient-percent: 20%;
-	--gradient-shine: var(--shine-btn-highlight-subtle);
-	box-shadow: inset 0 0 0 1px var(--shine-btn-bg-subtle);
-	transform: none;
-}
+	&:is(:hover, :focus-visible) {
+		--gradient-angle-offset: 95deg;
+		--gradient-percent: 20%;
+		--gradient-shine: var(--shine-btn-highlight-subtle);
+		box-shadow: inset 0 0 0 1px var(--shine-btn-bg-subtle);
+		transform: none;
+	}
 
-.shine-btn:is(:hover, :focus-visible),
-.shine-btn:is(:hover, :focus-visible)::before,
-.shine-btn:is(:hover, :focus-visible)::after {
-	animation-play-state: running;
-}
+	&:is(:hover, :focus-visible),
+	&:is(:hover, :focus-visible)::before,
+	&:is(:hover, :focus-visible)::after {
+		animation-play-state: running;
+	}
 
-.shine-btn:is(:hover, :focus-visible) span::before {
-	opacity: 1;
+	&:is(:hover, :focus-visible) span::before {
+		opacity: 1;
+	}
 }
 
 .btn {
@@ -518,33 +503,38 @@
 		border-color 0.3s var(--easing),
 		box-shadow 0.3s var(--easing);
 	will-change: transform;
-}
 
-.btn:active {
-	transform: scale(0.97);
+	&:active {
+		transform: scale(0.97);
+	}
 }
 
 .btn-secondary {
 	backdrop-filter: blur(8px) saturate(120%);
-	background: rgba(255, 255, 255, 0.04);
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+		#18181a;
 	border: 1px solid var(--border);
 	box-shadow:
 		inset 0 1px rgba(255, 255, 255, 0.06),
-		inset 0 -1px rgba(0, 0, 0, 0.2);
+		inset 0 -1px rgba(0, 0, 0, 0.2),
+		0 10px 24px rgba(0, 0, 0, 0.18);
 	color: var(--text);
-}
 
-.btn-secondary:hover,
-.btn-secondary:focus-visible {
-	background: rgba(255, 255, 255, 0.07);
-	border-color: var(--border-strong);
-	color: var(--text);
-	transform: none;
-}
+	&:hover,
+	&:focus-visible {
+		background:
+			linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035)),
+			#1c1c1f;
+		border-color: var(--border-strong);
+		color: var(--text);
+		transform: none;
+	}
 
-.btn-secondary:focus-visible {
-	outline: 2px solid var(--signal);
-	outline-offset: 4px;
+	&:focus-visible {
+		outline: 2px solid var(--signal);
+		outline-offset: 4px;
+	}
 }
 
 .btn-dot {
@@ -553,10 +543,11 @@
 	flex-shrink: 0;
 	height: 6px;
 	width: 6px;
-}
 
-.btn-dot::after {
-	content: none;
+	&::before,
+	&::after {
+		content: none;
+	}
 }
 
 @keyframes gradient-angle {
@@ -623,20 +614,32 @@
 
 @media (prefers-reduced-motion: reduce) {
 	.wp-block-button__link,
-	.wp-block-button__link::before,
-	.wp-block-button__link::after,
 	.wp-element-button,
-	.wp-element-button::before,
-	.wp-element-button::after,
 	.shine-btn,
-	.shine-btn::before,
-	.shine-btn::after,
-	.shine-btn span::before,
 	.btn,
-	.btn-dot::after {
+	.btn-dot {
 		animation: none;
 		animation-duration: 0.01ms;
 		animation-iteration-count: 1;
 		transition-duration: 0.01ms;
+
+		&::before,
+		&::after {
+			animation: none;
+			animation-duration: 0.01ms;
+			animation-iteration-count: 1;
+			transition-duration: 0.01ms;
+		}
+	}
+
+	.shine-btn {
+		span {
+			&::before {
+				animation: none;
+				animation-duration: 0.01ms;
+				animation-iteration-count: 1;
+				transition-duration: 0.01ms;
+			}
+		}
 	}
 }

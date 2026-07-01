@@ -16,14 +16,46 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function aiv_web_enqueue_assets(): void {
 	$theme_version = wp_get_theme()->get( 'Version' );
-	$script_paths  = array(
-		'aiv-web-header-scroll' => 'assets/js/header-scroll.js',
+	$script_assets = array(
+		'aiv-web-header-scroll' => array(
+			'path' => 'assets/js/header-scroll.js',
+			'deps' => array(),
+		),
 	);
 
 	if ( is_front_page() ) {
-		$script_paths['aiv-web-scroll-text']     = 'assets/js/scroll-text.js';
-		$script_paths['aiv-web-hero-canvas']     = 'assets/js/hero-canvas.js';
-		$script_paths['aiv-web-hero-typewriter'] = 'assets/js/hero-typewriter.js';
+		$script_assets['aiv-web-scroll-text']     = array(
+			'path' => 'assets/js/scroll-text.js',
+			'deps' => array(),
+		);
+		$script_assets['aiv-web-three']           = array(
+			'path' => 'assets/vendor/three/three.r134.min.js',
+			'deps' => array(),
+		);
+		$script_assets['aiv-web-vanta-waves']     = array(
+			'path' => 'assets/vendor/vanta/vanta.waves.min.js',
+			'deps' => array( 'aiv-web-three' ),
+		);
+		$script_assets['aiv-web-hero-canvas']     = array(
+			'path' => 'assets/js/hero-canvas.js',
+			'deps' => array( 'aiv-web-vanta-waves' ),
+		);
+		$script_assets['aiv-web-hero-typewriter'] = array(
+			'path' => 'assets/js/hero-typewriter.js',
+			'deps' => array(),
+		);
+		$script_assets['aiv-web-hero-counters']   = array(
+			'path' => 'assets/js/hero-counters.js',
+			'deps' => array(),
+		);
+		$script_assets['aiv-web-process-stack']   = array(
+			'path' => 'assets/js/process-stack.js',
+			'deps' => array(),
+		);
+		$script_assets['aiv-web-faq-accordion']   = array(
+			'path' => 'assets/js/faq-accordion.js',
+			'deps' => array(),
+		);
 	}
 
 	wp_enqueue_style(
@@ -33,8 +65,8 @@ function aiv_web_enqueue_assets(): void {
 		$theme_version
 	);
 
-	foreach ( $script_paths as $handle => $script_path ) {
-		$script_file = get_theme_file_path( $script_path );
+	foreach ( $script_assets as $handle => $script_asset ) {
+		$script_file = get_theme_file_path( $script_asset['path'] );
 
 		if ( ! file_exists( $script_file ) ) {
 			continue;
@@ -42,8 +74,8 @@ function aiv_web_enqueue_assets(): void {
 
 		wp_enqueue_script(
 			$handle,
-			get_theme_file_uri( $script_path ),
-			array(),
+			get_theme_file_uri( $script_asset['path'] ),
+			$script_asset['deps'],
 			(string) filemtime( $script_file ),
 			true
 		);
