@@ -12,8 +12,7 @@
 
 .aiv-home-hero,
 .aiv-scroll-text,
-.aiv-home-section,
-.aiv-final-cta {
+.aiv-home-section {
 	padding-left: var(--wp--preset--spacing--40);
 	padding-right: var(--wp--preset--spacing--40);
 }
@@ -107,14 +106,6 @@
 	margin: 0;
 	text-transform: uppercase;
 	width: fit-content;
-
-	&::before {
-		background-color: currentColor;
-		content: "";
-		display: inline-block;
-		height: 1px;
-		width: 2.25rem;
-	}
 }
 
 .aiv-home-hero__title {
@@ -176,30 +167,12 @@
 	}
 }
 
-.aiv-final-cta__title {
-	font-size: clamp(3.5rem, 8vw, 7.5rem);
-	font-weight: 850;
-	letter-spacing: 0;
-	line-height: 0.88;
-	margin: 0;
-	max-width: var(--wp--style--global--wide-size);
-	text-wrap: balance;
-}
-
 .aiv-home-hero__lead {
 	color: var(--wp--preset--color--muted);
 	font-size: clamp(1.08rem, 1.35vw, 1.28rem);
 	line-height: 1.55;
 	margin: 0;
 	max-width: 46rem;
-}
-
-.aiv-final-cta__text {
-	color: var(--wp--preset--color--muted);
-	font-size: clamp(1.1rem, 1.6vw, 1.45rem);
-	line-height: 1.55;
-	margin: 0;
-	max-width: var(--wp--style--global--wide-size);
 }
 
 .aiv-home-hero__actions {
@@ -314,8 +287,7 @@
 	}
 }
 
-.aiv-home-section,
-.aiv-final-cta {
+.aiv-home-section {
 	padding-bottom: clamp(5rem, 10vw, 9rem);
 	padding-top: clamp(5rem, 10vw, 9rem);
 }
@@ -841,48 +813,346 @@
 	}
 }
 
-.aiv-final-cta {
-	background-color: var(--wp--preset--color--base);
+.aiv-home-contact {
+	background:
+		linear-gradient(180deg, #050505 0%, rgba(5, 5, 5, 0) 18%, rgba(5, 5, 5, 0) 82%, #050505 100%),
+		radial-gradient(ellipse at 78% 46%, rgba(201, 226, 101, 0.13), transparent 34rem),
+		linear-gradient(180deg, #050505 0%, #101010 52%, #050505 100%),
+		#050505;
 	color: var(--wp--preset--color--contrast);
+	overflow: clip;
+	text-align: left;
+
+	.aiv-section-kicker {
+		color: var(--wp--preset--color--muted);
+	}
+}
+
+.aiv-home-contact__inner {
+	align-items: start;
+	display: grid;
+	gap: clamp(2rem, 5vw, 5rem);
+	grid-template-columns: minmax(0, 0.85fr) minmax(24rem, 1.15fr);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--wp--style--global--wide-size);
+	width: 100%;
+}
+
+.aiv-home-contact__content {
+	display: grid;
+	gap: clamp(1rem, 2vw, 1.5rem);
+	justify-items: start;
+	max-width: 42rem;
+
+	> * {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+}
+
+.aiv-home-contact__title {
+	color: var(--wp--preset--color--contrast);
+}
+
+.aiv-home-contact__text {
+	color: color-mix(in srgb, var(--wp--preset--color--contrast) 72%, transparent);
+	font-size: clamp(1.08rem, 1.35vw, 1.28rem);
+	line-height: 1.55;
+	margin: 0;
+	max-width: 34rem;
+}
+
+.aiv-home-contact__note,
+.aiv-home-contact__missing {
+	border-left: 2px solid #c9e265;
+	color: color-mix(in srgb, var(--wp--preset--color--contrast) 72%, transparent);
+	font-size: 0.95rem;
+	line-height: 1.5;
+	margin: clamp(0.5rem, 1vw, 1rem) 0 0;
+	padding-left: 1rem;
+}
+
+.aiv-home-contact__form {
+	background:
+		linear-gradient(145deg, rgba(255, 255, 255, 0.058), rgba(255, 255, 255, 0.025)),
+		#080808;
+	border: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 14%, transparent);
+	box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.22);
+	padding: clamp(1.25rem, 3vw, 2.5rem);
 	position: relative;
 
 	&::before {
-		background:
-			linear-gradient(90deg, color-mix(in srgb, var(--wp--preset--color--base) 8%, transparent) 1px, transparent 1px),
-			linear-gradient(color-mix(in srgb, var(--wp--preset--color--base) 8%, transparent) 1px, transparent 1px);
-		background-size: 4rem 4rem;
+		background: linear-gradient(135deg, rgba(201, 226, 101, 0.11), transparent 46%);
 		content: "";
 		inset: 0;
-		mask-image: linear-gradient(90deg, transparent, #000 25%, transparent 75%);
-		opacity: 0.55;
+		opacity: 0.85;
 		pointer-events: none;
 		position: absolute;
 	}
 
-	.aiv-section-kicker,
-	.aiv-final-cta__text {
-		color: var(--wp--preset--color--muted);
+	> * {
+		position: relative;
+		z-index: 1;
 	}
 
-	.wp-block-button__link {
-		background-color: var(--wp--preset--color--contrast);
-		border-color: var(--wp--preset--color--contrast);
-		color: var(--wp--preset--color--base);
+	form,
+	.aiv-contact-form {
+		display: grid;
+		gap: clamp(0.9rem, 1.5vw, 1.2rem);
+	}
+
+	label {
+		color: color-mix(in srgb, var(--wp--preset--color--contrast) 82%, transparent);
+		font-size: 0.9rem;
+		font-weight: 750;
+		letter-spacing: 0;
+	}
+
+	input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+	select,
+	textarea {
+		background-color: rgba(255, 255, 255, 0.035);
+		border: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 14%, transparent);
+		color: var(--wp--preset--color--contrast);
+		outline: none;
+		padding: 0.95rem 1rem;
+		transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+
+		&::placeholder {
+			color: color-mix(in srgb, var(--wp--preset--color--contrast) 38%, transparent);
+		}
+
+		&:focus-visible,
+		&:focus {
+			background-color: rgba(255, 255, 255, 0.055);
+			border-color: rgba(201, 226, 101, 0.72);
+			box-shadow: 0 0 0 3px rgba(201, 226, 101, 0.12);
+		}
+	}
+
+	textarea {
+		min-height: 10rem;
+	}
+
+	.aiv-contact-radio-group {
+		border: 0;
+		display: grid;
+		gap: 0.65rem;
+		margin: 0;
+		padding: 0;
+	}
+
+	.aiv-contact-radio-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+	}
+
+	.aiv-contact-radio-button {
+		cursor: pointer;
+		display: inline-flex;
+		position: relative;
+
+		input {
+			border: 0;
+			clip: rect(0, 0, 0, 0);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
+
+			&:checked + span {
+				background-color: rgba(201, 226, 101, 0.1);
+				border-color: rgba(201, 226, 101, 0.72);
+				box-shadow: 0 0 0 3px rgba(201, 226, 101, 0.08);
+				color: var(--wp--preset--color--contrast);
+
+				&::before {
+					background-color: #c9e265;
+					box-shadow: 0 0 8px rgba(201, 226, 101, 0.7);
+				}
+			}
+
+			&:focus-visible + span {
+				border-color: rgba(201, 226, 101, 0.72);
+				box-shadow: 0 0 0 3px rgba(201, 226, 101, 0.12);
+				outline: none;
+			}
+
+			&:disabled + span {
+				cursor: not-allowed;
+				opacity: 0.55;
+			}
+		}
+
+		span {
+			align-items: center;
+			background-color: rgba(255, 255, 255, 0.035);
+			border: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 14%, transparent);
+			color: color-mix(in srgb, var(--wp--preset--color--contrast) 78%, transparent);
+			display: inline-flex;
+			gap: 0.55rem;
+			min-height: 3rem;
+			padding: 0.82rem 1rem;
+			transition:
+				background-color 180ms ease,
+				border-color 180ms ease,
+				box-shadow 180ms ease,
+				color 180ms ease;
+
+			&::before {
+				background-color: color-mix(in srgb, var(--wp--preset--color--contrast) 32%, transparent);
+				content: "";
+				display: inline-block;
+				flex: 0 0 auto;
+				height: 6px;
+				transition: background-color 180ms ease, box-shadow 180ms ease;
+				width: 6px;
+			}
+		}
+
+		&:hover {
+			span {
+				background-color: rgba(255, 255, 255, 0.055);
+				border-color: rgba(201, 226, 101, 0.42);
+				color: var(--wp--preset--color--contrast);
+			}
+		}
+	}
+
+	button,
+	input[type="submit"],
+	.wp-element-button {
+		--animation: gradient-angle linear infinite;
+		--duration: 6s;
+		--gradient-angle-offset: 0deg;
+		--gradient-percent: 5%;
+		--gradient-shine: #fff;
+		--shadow-size: 2px;
+		--shine-btn-bg: #18181a;
+		--shine-btn-bg-subtle: #2a2a2d;
+		--shine-btn-dot: white;
+		--shine-btn-highlight: #c9e265;
+		--shine-btn-highlight-subtle: #dcec93;
+		--transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+		animation: var(--animation) var(--duration), var(--animation) calc(var(--duration) / 0.4) reverse paused;
+		animation-composition: add;
+		background:
+			linear-gradient(var(--shine-btn-bg), var(--shine-btn-bg)) padding-box,
+			conic-gradient(
+				from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+				transparent,
+				var(--shine-btn-highlight) var(--gradient-percent),
+				var(--gradient-shine) calc(var(--gradient-percent) * 2),
+				var(--shine-btn-highlight) calc(var(--gradient-percent) * 3),
+				transparent calc(var(--gradient-percent) * 4)
+			) border-box;
+		border: 1px solid transparent;
+		box-shadow: inset 0 0 0 1px var(--shine-btn-bg-subtle);
+		color: var(--wp--preset--color--contrast);
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: 500;
+		isolation: isolate;
+		justify-self: start;
+		line-height: 1.2;
+		overflow: hidden;
+		padding: 1.1rem 2rem;
+		position: relative;
+		transition: var(--transition);
+		transition-property: --gradient-angle-offset, --gradient-percent, --gradient-shine;
+		width: auto;
+
+		&::before,
+		&::after {
+			content: "";
+			inset: auto;
+			inset-block-start: 50%;
+			inset-inline-start: 50%;
+			pointer-events: none;
+			position: absolute;
+			translate: -50% -50%;
+			z-index: 0;
+		}
+
+		&::before {
+			--position: 2px;
+			--size: calc(100% - var(--shadow-size) * 3);
+			--space: calc(var(--position) * 2);
+			animation: var(--animation) var(--duration), var(--animation) calc(var(--duration) / 0.4) reverse paused;
+			animation-composition: add;
+			background: radial-gradient(
+				circle at var(--position) var(--position),
+				var(--shine-btn-dot) calc(var(--position) / 4),
+				transparent 0
+			) padding-box;
+			background-repeat: space;
+			background-size: var(--space) var(--space);
+			height: var(--size);
+			mask-image: conic-gradient(from calc(var(--gradient-angle) + 45deg), black, transparent 10% 90%, black);
+			opacity: 0.4;
+			width: var(--size);
+		}
+
+		&::after {
+			animation: shimmer var(--duration) linear infinite, shimmer calc(var(--duration) / 0.4) linear reverse paused;
+			animation-composition: add;
+			aspect-ratio: 1;
+			background: linear-gradient(-50deg, transparent, var(--shine-btn-highlight), transparent);
+			mask-image: radial-gradient(circle at bottom, transparent 40%, #000);
+			opacity: 0.18;
+			width: 100%;
+		}
 
 		&:hover,
 		&:focus-visible {
-			background-color: transparent;
-			color: var(--wp--preset--color--contrast);
-			outline-color: var(--wp--preset--color--contrast);
+			--gradient-angle-offset: 95deg;
+			--gradient-percent: 20%;
+			--gradient-shine: var(--shine-btn-highlight-subtle);
+			text-decoration: none;
+		}
+
+		&:hover,
+		&:focus-visible,
+		&:hover::before,
+		&:focus-visible::before,
+		&:hover::after,
+		&:focus-visible::after {
+			animation-play-state: running;
+		}
+
+		&:focus-visible {
+			outline: 2px solid #c9e265;
+			outline-offset: 4px;
+		}
+
+		&:disabled {
+			cursor: wait;
+			opacity: 0.68;
 		}
 	}
-}
 
-.aiv-final-cta__inner {
-	display: grid;
-	gap: var(--wp--preset--spacing--50);
-	position: relative;
-	z-index: 1;
+	:is(.success, .error, .notice, .message, [class*="success"], [class*="error"], [role="alert"]) {
+		border: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 16%, transparent);
+		color: var(--wp--preset--color--contrast);
+		line-height: 1.5;
+		margin: 0;
+		padding: 0.9rem 1rem;
+	}
+
+	:is(.success, [class*="success"]) {
+		background-color: rgba(201, 226, 101, 0.1);
+		border-color: rgba(201, 226, 101, 0.38);
+	}
+
+	:is(.error, [class*="error"], [role="alert"]) {
+		background-color: rgba(255, 91, 91, 0.1);
+		border-color: rgba(255, 91, 91, 0.38);
+	}
 }
 
 @media (hover: hover) {
@@ -916,6 +1186,10 @@
 @media (max-width: 960px) {
 	.aiv-home-section__head {
 		align-items: start;
+		grid-template-columns: 1fr;
+	}
+
+	.aiv-home-contact__inner {
 		grid-template-columns: 1fr;
 	}
 
@@ -1014,10 +1288,6 @@
 		font-size: clamp(1.95rem, 9.2vw, 3rem);
 		letter-spacing: -0.045em;
 		line-height: 0.94;
-	}
-
-	.aiv-final-cta__title {
-		font-size: 3.25rem;
 	}
 
 	.aiv-scroll-text__line,

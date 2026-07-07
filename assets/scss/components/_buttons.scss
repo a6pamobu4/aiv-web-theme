@@ -96,23 +96,6 @@
 	padding: 0.78rem 0.95rem;
 }
 
-.aiv-final-cta .aiv-button--primary .wp-block-button__link,
-.aiv-final-cta .aiv-button--primary .wp-element-button {
-	background-color: var(--wp--preset--color--contrast);
-	border-color: var(--wp--preset--color--contrast);
-	color: var(--wp--preset--color--base);
-
-	&::before {
-		background-color: var(--wp--preset--color--base);
-	}
-
-	&:hover,
-	&:focus-visible {
-		color: var(--wp--preset--color--contrast);
-		outline-color: var(--wp--preset--color--contrast);
-	}
-}
-
 @property --shine-btn-angle {
 	syntax: "<angle>";
 	inherits: false;
