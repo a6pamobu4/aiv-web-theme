@@ -11,10 +11,6 @@
 ?>
 <!-- wp:group {"tagName":"section","align":"full","className":"aiv-home-hero","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull aiv-home-hero">
-	<!-- wp:html -->
-	<div class="aiv-home-hero__canvas" data-hero-canvas aria-hidden="true"></div>
-	<!-- /wp:html -->
-
 	<!-- wp:group {"align":"wide","className":"aiv-home-hero__inner","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignwide aiv-home-hero__inner">
 		<!-- wp:paragraph {"className":"aiv-section-kicker"} -->

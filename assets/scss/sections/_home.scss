@@ -19,8 +19,9 @@
 
 .aiv-home-hero {
 	background:
-		radial-gradient(circle at 72% 32%, rgba(201, 226, 101, 0.24), transparent 34rem),
-		linear-gradient(145deg, #030303 0%, var(--wp--preset--color--base) 58%, #090a07 100%);
+		linear-gradient(90deg, rgba(3, 3, 3, 0.88) 0%, rgba(3, 3, 3, 0.64) 48%, rgba(3, 3, 3, 0.82) 100%),
+		radial-gradient(circle at 72% 32%, rgba(201, 226, 101, 0.2), transparent 34rem),
+		linear-gradient(145deg, #030303 0%, #080a04 58%, #030303 100%);
 	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 12%, transparent);
 	display: grid;
 	min-height: 100svh;
@@ -39,8 +40,8 @@
 
 	&::before {
 		background:
-			linear-gradient(90deg, rgba(3, 3, 3, 0.78) 0%, rgba(3, 3, 3, 0.48) 42%, rgba(3, 3, 3, 0.14) 100%),
-			radial-gradient(circle at 72% 44%, rgba(201, 226, 101, 0.24), transparent 32rem);
+			linear-gradient(90deg, rgba(3, 3, 3, 0.42) 0%, rgba(3, 3, 3, 0.18) 42%, rgba(3, 3, 3, 0.34) 100%),
+			radial-gradient(circle at 72% 44%, rgba(201, 226, 101, 0.16), transparent 32rem);
 		inset: 0;
 		opacity: 0.88;
 		z-index: 1;
@@ -50,28 +51,6 @@
 		background: linear-gradient(180deg, rgba(3, 3, 3, 0.24) 0%, transparent 24%, transparent 70%, rgba(3, 3, 3, 0.72) 100%);
 		inset: 0;
 		z-index: 2;
-	}
-}
-
-.aiv-home-hero__canvas {
-	bottom: 0;
-	height: 100%;
-	left: 50%;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-	max-width: none !important;
-	opacity: 0.92;
-	pointer-events: none;
-	position: absolute;
-	right: auto;
-	top: 0;
-	transform: translateX(-50%);
-	width: 100%;
-	width: 100vw;
-	z-index: 0;
-
-	canvas {
-		filter: saturate(1.32) contrast(1.18) brightness(1.18);
 	}
 }
 

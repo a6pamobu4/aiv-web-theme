@@ -28,18 +28,6 @@ function aiv_web_enqueue_assets(): void {
 			'path' => 'assets/js/scroll-text.js',
 			'deps' => array(),
 		);
-		$script_assets['aiv-web-three']           = array(
-			'path' => 'assets/vendor/three/three.r134.min.js',
-			'deps' => array(),
-		);
-		$script_assets['aiv-web-vanta-waves']     = array(
-			'path' => 'assets/vendor/vanta/vanta.waves.min.js',
-			'deps' => array( 'aiv-web-three' ),
-		);
-		$script_assets['aiv-web-hero-canvas']     = array(
-			'path' => 'assets/js/hero-canvas.js',
-			'deps' => array( 'aiv-web-vanta-waves' ),
-		);
 		$script_assets['aiv-web-hero-typewriter'] = array(
 			'path' => 'assets/js/hero-typewriter.js',
 			'deps' => array(),
