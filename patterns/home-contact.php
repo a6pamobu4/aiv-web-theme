@@ -13,7 +13,7 @@
 <section id="contact" class="aiv-home-section aiv-home-contact">
 	<div class="aiv-home-contact__inner">
 		<div class="aiv-home-contact__content">
-			<p class="aiv-section-kicker"><?php echo esc_html_x( '05 / КОНТАКТ', 'Contact section label', 'aiv-web' ); ?></p>
+			<p class="aiv-section-kicker"><?php echo esc_html_x( '06 / КОНТАКТ', 'Contact section label', 'aiv-web' ); ?></p>
 			<h2 class="aiv-home-section__title aiv-home-contact__title"><?php echo esc_html_x( 'Обсудим проект?', 'Contact section heading', 'aiv-web' ); ?></h2>
 			<p class="aiv-home-contact__text"><?php echo esc_html_x( 'Расскажите коротко о задаче — мы оценим формат, сроки и следующий шаг.', 'Contact section text', 'aiv-web' ); ?></p>
 			<p class="aiv-home-contact__note"><?php echo esc_html_x( 'Обычно отвечаем в течение рабочего дня.', 'Contact section note', 'aiv-web' ); ?></p>

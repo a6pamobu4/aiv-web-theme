@@ -12,7 +12,7 @@
 <!-- wp:html -->
 <section id="process" class="aiv-home-section aiv-process">
 	<div class="aiv-home-section__head aiv-process__head">
-		<p class="aiv-section-kicker"><?php echo esc_html_x( '02 / Процесс', 'Process section label', 'aiv-web' ); ?></p>
+		<p class="aiv-section-kicker"><?php echo esc_html_x( '04 / ПРОЦЕСС', 'Process section label', 'aiv-web' ); ?></p>
 		<h2 class="aiv-home-section__title"><?php echo esc_html_x( 'Как двигаемся от задачи к запуску', 'Process heading', 'aiv-web' ); ?></h2>
 	</div>
 

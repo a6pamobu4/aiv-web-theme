@@ -14,7 +14,7 @@
 	<!-- wp:group {"align":"wide","className":"aiv-home-section__head","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignwide aiv-home-section__head">
 		<!-- wp:paragraph {"className":"aiv-section-kicker"} -->
-		<p class="aiv-section-kicker"><?php echo esc_html_x( '03 / FAQ', 'FAQ section label', 'aiv-web' ); ?></p>
+		<p class="aiv-section-kicker"><?php echo esc_html_x( '05 / FAQ', 'FAQ section label', 'aiv-web' ); ?></p>
 		<!-- /wp:paragraph -->
 		<!-- wp:heading {"className":"aiv-home-section__title"} -->
 		<h2 class="wp-block-heading aiv-home-section__title"><?php echo esc_html_x( 'Коротко о главном перед брифингом', 'FAQ heading', 'aiv-web' ); ?></h2>

@@ -12,7 +12,7 @@
 <!-- wp:html -->
 <section id="services" class="aiv-home-section aiv-services">
 	<div class="aiv-home-section__head aiv-services__head">
-		<p class="aiv-section-kicker"><?php echo esc_html_x( '01 / Услуги', 'Services section label', 'aiv-web' ); ?></p>
+		<p class="aiv-section-kicker"><?php echo esc_html_x( '03 / УСЛУГИ', 'Services section label', 'aiv-web' ); ?></p>
 		<h2 class="aiv-home-section__title"><?php echo esc_html_x( 'Что делаем для роста проекта', 'Services heading', 'aiv-web' ); ?></h2>
 	</div>
 

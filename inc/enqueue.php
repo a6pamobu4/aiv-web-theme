@@ -24,10 +24,6 @@ function aiv_web_enqueue_assets(): void {
 	);
 
 	if ( is_front_page() ) {
-		$script_assets['aiv-web-scroll-text']     = array(
-			'path' => 'assets/js/scroll-text.js',
-			'deps' => array(),
-		);
 		$script_assets['aiv-web-hero-typewriter'] = array(
 			'path' => 'assets/js/hero-typewriter.js',
 			'deps' => array(),
@@ -38,6 +34,10 @@ function aiv_web_enqueue_assets(): void {
 		);
 		$script_assets['aiv-web-hero-cat']        = array(
 			'path' => 'assets/js/hero-cat.js',
+			'deps' => array(),
+		);
+		$script_assets['aiv-web-approach']        = array(
+			'path' => 'assets/js/approach-timeline.js',
 			'deps' => array(),
 		);
 		$script_assets['aiv-web-process-stack']   = array(
