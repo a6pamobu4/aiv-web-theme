@@ -11,6 +11,12 @@
 ?>
 <!-- wp:group {"tagName":"section","align":"full","className":"aiv-home-hero","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull aiv-home-hero">
+	<!-- wp:html -->
+	<div class="aiv-hero-cat" data-hero-cat aria-hidden="true">
+		<img class="aiv-hero-cat__image" src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-cat.png' ) ); ?>" alt="" width="1496" height="1024" decoding="async" draggable="false" />
+	</div>
+	<!-- /wp:html -->
+
 	<!-- wp:group {"align":"wide","className":"aiv-home-hero__inner","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignwide aiv-home-hero__inner">
 		<!-- wp:paragraph {"className":"aiv-section-kicker"} -->

@@ -74,6 +74,76 @@
 	}
 }
 
+.aiv-hero-cat {
+	--hero-cat-facing: 1;
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	transform: translate3d(-110px, 50vh, 0);
+	transform-origin: center bottom;
+	width: clamp(9.5rem, 12vw, 13.5rem);
+	z-index: 4;
+}
+
+.aiv-hero-cat__image {
+	display: block;
+	filter:
+		drop-shadow(0 0 0.6rem rgba(255, 255, 255, 0.08))
+		drop-shadow(0 1rem 1.7rem rgba(0, 0, 0, 0.42));
+	height: auto;
+	max-width: none;
+	transform: scaleX(var(--hero-cat-facing));
+	transform-origin: center bottom;
+	user-select: none;
+	width: 100%;
+}
+
+.aiv-hero-cat.is-running {
+	.aiv-hero-cat__image {
+		animation: aiv-cat-photo-run 980ms ease-in-out infinite;
+	}
+}
+
+.aiv-hero-cat.is-crouching {
+	.aiv-hero-cat__image {
+		animation: aiv-cat-photo-ready 1.35s ease-in-out infinite;
+		filter:
+			drop-shadow(0 0 0.75rem rgba(201, 226, 101, 0.14))
+			drop-shadow(0 1rem 1.7rem rgba(0, 0, 0, 0.46));
+		transform: scaleX(var(--hero-cat-facing)) translateY(0.78rem) scale(1.07, 0.82);
+		transform-origin: center bottom;
+	}
+}
+
+.aiv-hero-cat.is-sitting {
+	.aiv-hero-cat__image {
+		transform: scaleX(var(--hero-cat-facing)) translateY(0.5rem) scale(0.96, 0.9);
+	}
+}
+
+@keyframes aiv-cat-photo-run {
+	0%,
+	100% {
+		transform: scaleX(var(--hero-cat-facing)) translateY(0) rotate(-0.7deg);
+	}
+
+	50% {
+		transform: scaleX(var(--hero-cat-facing)) translateY(-0.32rem) rotate(0.8deg);
+	}
+}
+
+@keyframes aiv-cat-photo-ready {
+	0%,
+	100% {
+		transform: scaleX(var(--hero-cat-facing)) translateY(0.78rem) scale(1.07, 0.82);
+	}
+
+	50% {
+		transform: scaleX(var(--hero-cat-facing)) translateY(0.95rem) scale(1.1, 0.78);
+	}
+}
+
 .aiv-section-kicker {
 	align-items: center;
 	color: var(--wp--preset--color--muted);
@@ -1195,6 +1265,10 @@
 }
 
 @media (max-width: 760px) {
+	.aiv-hero-cat {
+		display: none;
+	}
+
 	.aiv-home-hero {
 		min-height: 100svh;
 		padding-bottom: 3rem;
@@ -1307,6 +1381,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+	.aiv-hero-cat,
+	.aiv-hero-cat * {
+		animation: none !important;
+	}
+
 	.aiv-typewriter__text {
 		&::after {
 			animation: none;

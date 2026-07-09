@@ -36,6 +36,10 @@ function aiv_web_enqueue_assets(): void {
 			'path' => 'assets/js/hero-counters.js',
 			'deps' => array(),
 		);
+		$script_assets['aiv-web-hero-cat']        = array(
+			'path' => 'assets/js/hero-cat.js',
+			'deps' => array(),
+		);
 		$script_assets['aiv-web-process-stack']   = array(
 			'path' => 'assets/js/process-stack.js',
 			'deps' => array(),
