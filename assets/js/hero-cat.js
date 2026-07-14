@@ -8,7 +8,7 @@
 	var frame = 0;
 	var active = true;
 	var homeMode = true;
-	var crouchDistance = 88;
+	var crouchDistance = 112;
 	var current = { x: -90, y: 0 };
 	var target = { x: -90, y: 0 };
 	var lastTarget = { x: -90, y: 0 };
@@ -65,11 +65,15 @@
 		var dx = target.x - current.x;
 		var dy = target.y - current.y;
 		var distance = Math.hypot(dx, dy);
-		var ease = homeMode ? 0.04 : 0.055;
+		var ease = homeMode ? 0.025 : 0.03;
+		var maxStep = homeMode ? 3.2 : 4.2;
+		var step = Math.min(distance * ease, maxStep);
 		var isNearCursor = !homeMode && distance < crouchDistance;
 
-		current.x += dx * ease;
-		current.y += dy * ease;
+		if (distance > 0) {
+			current.x += (dx / distance) * step;
+			current.y += (dy / distance) * step;
+		}
 		setCatPosition();
 
 		cat.classList.toggle('is-crouching', isNearCursor);

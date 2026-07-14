@@ -13,6 +13,7 @@
 <section class="wp-block-group alignfull aiv-home-hero">
 	<!-- wp:html -->
 	<div class="aiv-hero-cat" data-hero-cat aria-hidden="true">
+		<span class="aiv-hero-cat__walk"></span>
 		<img class="aiv-hero-cat__image" src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-cat.png' ) ); ?>" alt="" width="1496" height="1024" decoding="async" draggable="false" />
 	</div>
 	<!-- /wp:html -->

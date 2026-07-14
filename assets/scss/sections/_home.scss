@@ -85,23 +85,41 @@
 	z-index: 4;
 }
 
-.aiv-hero-cat__image {
+.aiv-hero-cat__image,
+.aiv-hero-cat__walk {
 	display: block;
 	filter:
 		drop-shadow(0 0 0.6rem rgba(255, 255, 255, 0.08))
 		drop-shadow(0 1rem 1.7rem rgba(0, 0, 0, 0.42));
-	height: auto;
 	max-width: none;
 	transform: scaleX(var(--hero-cat-facing));
 	transform-origin: center bottom;
 	user-select: none;
+}
+
+.aiv-hero-cat__image {
+	height: auto;
 	width: 100%;
 }
 
-.aiv-hero-cat.is-running {
-	.aiv-hero-cat__image {
-		animation: aiv-cat-photo-run 980ms ease-in-out infinite;
-	}
+.aiv-hero-cat__walk {
+	animation: aiv-cat-walk-cycle 1120ms steps(5, end) infinite;
+	aspect-ratio: 351 / 521;
+	background-image: url("../images/hero-cat-walk.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 600% 100%;
+	display: none;
+	margin-left: 4%;
+	width: 82%;
+}
+
+.aiv-hero-cat.is-running .aiv-hero-cat__walk {
+	display: block;
+}
+
+.aiv-hero-cat.is-running .aiv-hero-cat__image {
+	display: none;
 }
 
 .aiv-hero-cat.is-crouching {
@@ -121,14 +139,9 @@
 	}
 }
 
-@keyframes aiv-cat-photo-run {
-	0%,
-	100% {
-		transform: scaleX(var(--hero-cat-facing)) translateY(0) rotate(-0.7deg);
-	}
-
-	50% {
-		transform: scaleX(var(--hero-cat-facing)) translateY(-0.32rem) rotate(0.8deg);
+@keyframes aiv-cat-walk-cycle {
+	to {
+		background-position: 100% 0;
 	}
 }
 
