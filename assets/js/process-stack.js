@@ -20,24 +20,33 @@
 	}
 
 	function updateCards() {
+		var activeIndex = 0;
+
 		frame = 0;
 
 		cards.forEach(function (card, index) {
 			var nextCard = cards[index + 1];
 			var progress = 0;
+			var cardRect = card.getBoundingClientRect();
 
 			if (nextCard) {
-				var cardRect = card.getBoundingClientRect();
 				var nextRect = nextCard.getBoundingClientRect();
-				var stickyTop = cardRect.top;
 				var distance = Math.max(cardRect.height * 0.45, 240);
 
-				progress = clamp((stickyTop + distance - nextRect.top) / distance, 0, 1);
+				progress = clamp((cardRect.top + distance - nextRect.top) / distance, 0, 1);
+
+				if (nextRect.top <= cardRect.bottom) {
+					activeIndex = index + 1;
+				}
 			}
 
 			card.style.setProperty('--process-card-scale', String(1 - progress * 0.055));
 			card.style.setProperty('--process-card-opacity', String(1 - progress * 0.28));
 			card.style.setProperty('--process-card-translate', progress * -18 + 'px');
+		});
+
+		cards.forEach(function (card, index) {
+			card.classList.toggle('is-active', index === activeIndex);
 		});
 	}
 

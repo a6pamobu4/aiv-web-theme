@@ -75,6 +75,7 @@
 
 .aiv-hero-cat {
 	--hero-cat-facing: 1;
+	display: none;
 	left: 0;
 	pointer-events: none;
 	position: absolute;
@@ -318,7 +319,7 @@
 }
 
 .aiv-approach-sticky {
-	align-items: center;
+	align-items: start;
 	display: grid;
 	min-height: 100svh;
 	padding-bottom: clamp(4rem, 7vw, 7rem);
@@ -328,7 +329,7 @@
 }
 
 .aiv-approach__inner {
-	align-items: center;
+	align-items: start;
 	display: grid;
 	gap: clamp(3rem, 7vw, 8rem);
 	grid-template-columns: minmax(0, 0.9fr) minmax(28rem, 1.1fr);
@@ -352,18 +353,13 @@
 
 .aiv-approach__title {
 	color: var(--wp--preset--color--contrast);
-	font-size: clamp(2.25rem, 4vw, 4.65rem);
-	font-weight: 840;
-	letter-spacing: -0.035em;
-	line-height: 0.98;
-	margin: 0;
 	max-width: 52rem;
-	text-wrap: balance;
 }
 
 .aiv-approach-timeline {
 	display: grid;
 	gap: clamp(1.35rem, 2.8vw, 2.4rem);
+	--approach-line-x: 0.65rem;
 	padding-left: clamp(3rem, 5vw, 5.25rem);
 	position: relative;
 }
@@ -371,7 +367,7 @@
 .aiv-approach-line {
 	background-color: color-mix(in srgb, var(--wp--preset--color--contrast) 14%, transparent);
 	bottom: 1.2rem;
-	left: 0.65rem;
+	left: var(--approach-line-x);
 	position: absolute;
 	top: 1.2rem;
 	width: 1px;
@@ -408,8 +404,7 @@
 	gap: 0.65rem;
 	opacity: 0.34;
 	position: relative;
-	transform: translateX(0);
-	transition: opacity 260ms ease, transform 260ms ease;
+	transition: opacity 260ms ease;
 	z-index: 1;
 
 	&.is-before {
@@ -418,12 +413,16 @@
 
 	&.is-active {
 		opacity: 1;
-		transform: translateX(1rem);
 
 		.aiv-approach-marker {
 			background-color: #c9e265;
 			box-shadow: 0 0 0 0.45rem rgba(201, 226, 101, 0.1), 0 0 24px rgba(201, 226, 101, 0.48);
 			transform: translate(-50%, -50%) scale(1.42);
+		}
+
+		.aiv-approach-number,
+		.aiv-approach-title {
+			transform: translateX(1rem);
 		}
 
 		.aiv-approach-title {
@@ -432,7 +431,7 @@
 
 		.aiv-approach-text {
 			opacity: 1;
-			transform: translateY(0);
+			transform: translate(1rem, 0);
 		}
 	}
 }
@@ -440,7 +439,7 @@
 .aiv-approach-marker {
 	background-color: color-mix(in srgb, var(--wp--preset--color--contrast) 48%, transparent);
 	height: 0.7rem;
-	left: calc(clamp(3rem, 5vw, 5.25rem) * -1 - 0.65rem);
+	left: calc(var(--approach-line-x) - clamp(3rem, 5vw, 5.25rem));
 	position: absolute;
 	top: 1.1rem;
 	transform: translate(-50%, -50%) scale(1);
@@ -455,6 +454,7 @@
 	letter-spacing: 0;
 	line-height: 1;
 	margin: 0;
+	transition: transform 260ms ease;
 }
 
 .aiv-approach-title {
@@ -464,7 +464,7 @@
 	letter-spacing: -0.03em;
 	line-height: 1;
 	margin: 0;
-	transition: color 260ms ease;
+	transition: color 260ms ease, transform 260ms ease;
 }
 
 .aiv-approach-text {
@@ -804,8 +804,7 @@
 		transition: opacity 260ms ease;
 	}
 
-	&:hover,
-	&:focus-within {
+	&.is-active {
 		border-color: rgba(201, 226, 101, 0.72);
 		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
 

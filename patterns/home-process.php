@@ -17,7 +17,7 @@
 	</div>
 
 	<div class="aiv-process-stack" data-process-stack>
-		<article class="aiv-process-card" style="--process-index: 1;">
+		<article class="aiv-process-card is-active" style="--process-index: 1;">
 			<span class="aiv-process-card__index">01</span>
 			<div class="aiv-process-card__body">
 				<span class="aiv-process-card__icon" aria-hidden="true">

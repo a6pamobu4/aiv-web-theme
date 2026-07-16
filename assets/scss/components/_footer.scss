@@ -14,7 +14,7 @@
 }
 
 .aiv-site-footer__top {
-	align-items: center;
+	align-items: start;
 	display: grid;
 	gap: var(--wp--preset--spacing--40);
 	grid-template-columns: minmax(12rem, 1fr) auto minmax(12rem, 1fr);
@@ -27,6 +27,7 @@
 }
 
 .aiv-site-footer__brand {
+	align-self: start;
 	justify-self: start;
 }
 
