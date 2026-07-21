@@ -190,8 +190,8 @@
 		"spacing": {
 			"blockGap": "1.5rem",
 			"padding": {
-				"left": "var(--wp--preset--spacing--40)",
-				"right": "var(--wp--preset--spacing--40)"
+				"left": "clamp(1.5rem, 3vw, 3rem)",
+				"right": "clamp(1.5rem, 3vw, 3rem)"
 			}
 		},
 		"typography": {

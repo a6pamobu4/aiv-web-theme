@@ -1,3 +1,5 @@
+@use "../settings";
+
 .wp-block-button__link,
 .wp-element-button {
 	align-items: center;
@@ -564,13 +566,13 @@
 	}
 }
 
-@media (max-width: 760px) {
+@include settings.breakpoint-down(md) {
 	.hero-actions {
 		gap: 0.75rem;
 	}
 }
 
-@media (max-width: 520px) {
+@include settings.breakpoint-down(sm) {
 	.hero-actions {
 		align-items: center;
 		flex-direction: column;

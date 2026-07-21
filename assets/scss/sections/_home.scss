@@ -1,3 +1,5 @@
+@use "../settings";
+
 .aiv-home {
 	max-width: none;
 	overflow: clip;
@@ -12,8 +14,8 @@
 
 .aiv-home-hero,
 .aiv-home-section {
-	padding-left: var(--wp--preset--spacing--40);
-	padding-right: var(--wp--preset--spacing--40);
+	padding-left: var(--aiv-content-gutter);
+	padding-right: var(--aiv-content-gutter);
 }
 
 .aiv-home-hero {
@@ -313,8 +315,8 @@
 	color: var(--wp--preset--color--contrast);
 	min-height: 240vh;
 	overflow: clip;
-	padding-left: var(--wp--preset--spacing--40);
-	padding-right: var(--wp--preset--spacing--40);
+	padding-left: var(--aiv-content-gutter);
+	padding-right: var(--aiv-content-gutter);
 	position: relative;
 }
 
@@ -1373,7 +1375,7 @@
 	}
 }
 
-@media (max-width: 899px) {
+@include settings.breakpoint-down(lg) {
 	.aiv-approach {
 		min-height: auto;
 	}
@@ -1438,7 +1440,7 @@
 	}
 }
 
-@media (max-width: 960px) {
+@include settings.breakpoint-down(lg) {
 	.aiv-home-section__head {
 		align-items: start;
 		grid-template-columns: 1fr;
@@ -1470,7 +1472,7 @@
 	}
 }
 
-@media (max-width: 760px) {
+@include settings.breakpoint-down(md) {
 	.aiv-hero-cat {
 		display: none;
 	}
@@ -1542,7 +1544,7 @@
 	}
 }
 
-@media (max-width: 520px) {
+@include settings.breakpoint-down(sm) {
 	.aiv-home-hero__title {
 		font-size: clamp(1.95rem, 9.2vw, 3rem);
 		letter-spacing: -0.045em;

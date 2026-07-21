@@ -1,3 +1,5 @@
+@use "../settings";
+
 .aiv-floating-contacts {
 	align-items: flex-end;
 	bottom: 1.5rem;
@@ -115,7 +117,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include settings.breakpoint-down(md) {
 	.aiv-floating-contacts {
 		align-items: center;
 		bottom: 0.75rem;

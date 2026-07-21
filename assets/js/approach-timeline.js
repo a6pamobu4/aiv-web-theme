@@ -3,7 +3,7 @@
 
 	var sections = Array.prototype.slice.call(document.querySelectorAll('[data-approach-timeline]'));
 	var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-	var desktop = window.matchMedia('(min-width: 900px)');
+	var desktop = window.matchMedia('(min-width: 64em)');
 	var ticking = false;
 	var observers = [];
 

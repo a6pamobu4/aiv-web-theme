@@ -1,9 +1,14 @@
 /*! Generated from assets/scss/base.scss. Do not edit assets/css/base.css directly. */
+@use "settings";
 @use "components/buttons";
 @use "components/header";
 @use "components/footer";
 @use "components/floating-contacts";
 @use "sections/home";
+
+:root {
+	--aiv-content-gutter: #{settings.$content-gutter};
+}
 
 * {
 	box-sizing: border-box;
