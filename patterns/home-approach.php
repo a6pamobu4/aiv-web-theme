@@ -16,7 +16,8 @@
 		<div class="aiv-approach__inner">
 			<div class="aiv-approach-intro">
 				<p class="aiv-section-kicker"><?php echo esc_html_x( '02 / ПОДХОД', 'Homepage approach eyebrow', 'aiv-web' ); ?></p>
-				<h2 class="aiv-home-section__title aiv-approach__title"><?php echo esc_html_x( 'Сайт — не набор экранов. Это рабочая система для бизнеса.', 'Homepage approach title', 'aiv-web' ); ?></h2>
+				<h2 class="aiv-home-section__title aiv-approach__title"><?php echo wp_kses_post( _x( 'Не просто сайт.<br>Система для роста<br>бизнеса.', 'Homepage approach title', 'aiv-web' ) ); ?></h2>
+				<p class="aiv-approach__summary"><?php echo esc_html_x( 'Связываем структуру, дизайн, скорость и развитие с конкретными задачами проекта.', 'Homepage approach summary', 'aiv-web' ); ?></p>
 			</div>
 
 			<div class="aiv-approach-timeline" aria-label="<?php echo esc_attr_x( 'Принципы подхода AIV-web', 'Homepage approach timeline label', 'aiv-web' ); ?>">

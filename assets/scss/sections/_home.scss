@@ -358,6 +358,14 @@
 	max-width: 52rem;
 }
 
+.aiv-approach__summary {
+	color: color-mix(in srgb, var(--wp--preset--color--contrast) 72%, transparent);
+	font-size: clamp(0.98rem, 1.1vw, 1.12rem);
+	line-height: 1.55;
+	margin: 0;
+	max-width: 34rem;
+}
+
 .aiv-approach-timeline {
 	display: grid;
 	gap: clamp(1.35rem, 2.8vw, 2.4rem);

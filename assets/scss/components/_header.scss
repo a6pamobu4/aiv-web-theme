@@ -5,6 +5,8 @@
 	background: rgba(3, 3, 3, 0.42);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	left: 0;
+	padding-left: var(--aiv-content-gutter);
+	padding-right: var(--aiv-content-gutter);
 	position: fixed;
 	right: 0;
 	top: 0;
@@ -34,8 +36,6 @@
 	margin-right: auto;
 	max-width: var(--wp--style--global--wide-size);
 	min-height: 5.25rem;
-	padding-left: var(--aiv-content-gutter);
-	padding-right: var(--aiv-content-gutter);
 	padding-bottom: 1rem;
 	padding-top: 1rem;
 	width: 100%;

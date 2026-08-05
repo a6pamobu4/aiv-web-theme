@@ -3,6 +3,8 @@
 .aiv-site-footer {
 	border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 14%, transparent);
 	padding-bottom: var(--wp--preset--spacing--70);
+	padding-left: var(--aiv-content-gutter);
+	padding-right: var(--aiv-content-gutter);
 	padding-top: var(--wp--preset--spacing--70);
 }
 
@@ -12,8 +14,6 @@
 	margin-left: auto;
 	margin-right: auto;
 	max-width: var(--wp--style--global--wide-size);
-	padding-left: var(--aiv-content-gutter);
-	padding-right: var(--aiv-content-gutter);
 	width: 100%;
 }
 
