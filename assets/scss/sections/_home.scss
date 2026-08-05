@@ -21,7 +21,7 @@
 .aiv-home-hero {
 	background:
 		linear-gradient(90deg, rgba(3, 3, 3, 0.88) 0%, rgba(3, 3, 3, 0.64) 48%, rgba(3, 3, 3, 0.82) 100%),
-		radial-gradient(circle at 72% 32%, rgba(201, 226, 101, 0.2), transparent 34rem),
+		radial-gradient(circle at 72% 32%, rgba(200, 227, 100, 0.2), transparent 34rem),
 		linear-gradient(145deg, #030303 0%, #080a04 58%, #030303 100%);
 	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 12%, transparent);
 	display: grid;
@@ -42,7 +42,7 @@
 	&::before {
 		background:
 			linear-gradient(90deg, rgba(3, 3, 3, 0.42) 0%, rgba(3, 3, 3, 0.18) 42%, rgba(3, 3, 3, 0.34) 100%),
-			radial-gradient(circle at 72% 44%, rgba(201, 226, 101, 0.16), transparent 32rem);
+			radial-gradient(circle at 72% 44%, rgba(200, 227, 100, 0.16), transparent 32rem);
 		inset: 0;
 		opacity: 0.88;
 		z-index: 1;
@@ -129,7 +129,7 @@
 	.aiv-hero-cat__image {
 		animation: aiv-cat-photo-ready 1.35s ease-in-out infinite;
 		filter:
-			drop-shadow(0 0 0.75rem rgba(201, 226, 101, 0.14))
+			drop-shadow(0 0 0.75rem rgba(200, 227, 100, 0.14))
 			drop-shadow(0 1rem 1.7rem rgba(0, 0, 0, 0.46));
 		transform: scaleX(var(--hero-cat-facing)) translateY(0.78rem) scale(1.07, 0.82);
 		transform-origin: center bottom;
@@ -191,7 +191,7 @@
 }
 
 .aiv-typewriter {
-	color: #c9e265;
+	color: #c8e364;
 	display: inline-grid;
 	position: relative;
 	white-space: nowrap;
@@ -268,8 +268,8 @@
 
 	& + & {
 		&::before {
-			background: #c9e265;
-			box-shadow: 0 0 8px rgba(201, 226, 101, 0.7);
+			background: #c8e364;
+			box-shadow: 0 0 8px rgba(200, 227, 100, 0.7);
 			content: "";
 			height: 6px;
 			left: calc(clamp(2rem, 4vw, 3.6rem) / -2);
@@ -282,7 +282,7 @@
 }
 
 .aiv-home-hero__proof strong {
-	color: #c9e265;
+	color: #c8e364;
 	display: inline-block;
 	font-size: clamp(1.65rem, 2.55vw, 2.65rem);
 	font-weight: 850;
@@ -309,7 +309,7 @@
 	--approach-progress: 0;
 	background:
 		linear-gradient(180deg, #050505 0%, rgba(5, 5, 5, 0) 18%, rgba(5, 5, 5, 0) 82%, #050505 100%),
-		radial-gradient(ellipse at 78% 44%, rgba(201, 226, 101, 0.12), transparent 38rem),
+		radial-gradient(ellipse at 78% 44%, rgba(200, 227, 100, 0.12), transparent 38rem),
 		linear-gradient(180deg, #050505 0%, #0d0d0d 50%, #050505 100%);
 	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 12%, transparent);
 	color: var(--wp--preset--color--contrast);
@@ -384,8 +384,8 @@
 }
 
 .aiv-approach-progress {
-	background-color: #c9e265;
-	box-shadow: 0 0 18px rgba(201, 226, 101, 0.42);
+	background-color: #c8e364;
+	box-shadow: 0 0 18px rgba(200, 227, 100, 0.42);
 	display: block;
 	height: calc(var(--approach-progress) * 100%);
 	left: 0;
@@ -395,7 +395,7 @@
 }
 
 .aiv-approach-background-number {
-	color: rgba(201, 226, 101, 0.08);
+	color: rgba(200, 227, 100, 0.08);
 	font-size: clamp(8rem, 18vw, 18rem);
 	font-weight: 900;
 	letter-spacing: -0.08em;
@@ -425,8 +425,8 @@
 		opacity: 1;
 
 		.aiv-approach-marker {
-			background-color: #c9e265;
-			box-shadow: 0 0 0 0.45rem rgba(201, 226, 101, 0.1), 0 0 24px rgba(201, 226, 101, 0.48);
+			background-color: #c8e364;
+			box-shadow: 0 0 0 0.45rem rgba(200, 227, 100, 0.1), 0 0 24px rgba(200, 227, 100, 0.48);
 			transform: translate(-50%, -50%) scale(1.42);
 		}
 
@@ -458,7 +458,7 @@
 }
 
 .aiv-approach-number {
-	color: #c9e265;
+	color: #c8e364;
 	font-size: 0.82rem;
 	font-weight: 850;
 	letter-spacing: 0;
@@ -495,7 +495,6 @@
 
 .aiv-home-section {
 	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 12%, transparent);
-	scroll-margin-top: 7rem;
 }
 
 .aiv-home-section__head {
@@ -526,7 +525,7 @@
 .aiv-services {
 	background:
 		linear-gradient(180deg, #050505 0%, rgba(5, 5, 5, 0) 18%, rgba(5, 5, 5, 0) 82%, #050505 100%),
-		radial-gradient(ellipse at 50% 48%, rgba(201, 226, 101, 0.13), transparent 42rem),
+		radial-gradient(ellipse at 50% 48%, rgba(200, 227, 100, 0.13), transparent 42rem),
 		radial-gradient(ellipse at 50% 52%, rgba(255, 255, 255, 0.07), transparent 56rem),
 		linear-gradient(180deg, #050505 0%, #111112 50%, #050505 100%),
 		#050505;
@@ -589,7 +588,7 @@
 	transition: background-color 220ms ease, border-color 220ms ease, transform 220ms ease;
 
 	&::before {
-		background: linear-gradient(135deg, rgba(201, 226, 101, 0.12), transparent 46%);
+		background: linear-gradient(135deg, rgba(200, 227, 100, 0.12), transparent 46%);
 		content: "";
 		inset: 0;
 		opacity: 0;
@@ -603,7 +602,7 @@
 	}
 
 	&:focus-visible {
-		outline: 2px solid #c9e265;
+		outline: 2px solid #c8e364;
 		outline-offset: 4px;
 	}
 }
@@ -649,9 +648,9 @@
 
 .aiv-service-row__icon {
 	align-items: center;
-	background-color: rgba(201, 226, 101, 0.12);
-	border: 1px solid rgba(201, 226, 101, 0.55);
-	color: #c9e265;
+	background-color: rgba(200, 227, 100, 0.12);
+	border: 1px solid rgba(200, 227, 100, 0.55);
+	color: #c8e364;
 	display: inline-flex;
 	height: clamp(2.25rem, 3vw, 3rem);
 	justify-content: center;
@@ -707,7 +706,7 @@
 
 .aiv-service-row__tags {
 	align-self: end;
-	grid-column: 1;
+	grid-column: 1 / 3;
 	grid-row: 2;
 	justify-content: flex-start;
 	max-width: none;
@@ -743,7 +742,7 @@
 .aiv-process {
 	background:
 		linear-gradient(180deg, #050505 0%, rgba(5, 5, 5, 0) 16%, rgba(5, 5, 5, 0) 84%, #050505 100%),
-		radial-gradient(ellipse at 54% 45%, rgba(201, 226, 101, 0.1), transparent 42rem),
+		radial-gradient(ellipse at 54% 45%, rgba(200, 227, 100, 0.1), transparent 42rem),
 		linear-gradient(180deg, #050505 0%, #101010 50%, #050505 100%),
 		#050505;
 	color: var(--wp--preset--color--contrast);
@@ -806,7 +805,7 @@
 	z-index: var(--process-index);
 
 	&::before {
-		background: linear-gradient(135deg, rgba(201, 226, 101, 0.12), transparent 46%);
+		background: linear-gradient(135deg, rgba(200, 227, 100, 0.12), transparent 46%);
 		content: "";
 		inset: 0;
 		opacity: 0;
@@ -815,7 +814,7 @@
 	}
 
 	&.is-active {
-		border-color: rgba(201, 226, 101, 0.72);
+		border-color: rgba(200, 227, 100, 0.72);
 		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
 
 		&::before {
@@ -823,7 +822,7 @@
 		}
 
 		.aiv-process-card__index {
-			color: #c9e265;
+			color: #c8e364;
 		}
 
 		.aiv-process-card__icon {
@@ -885,9 +884,9 @@
 
 .aiv-process-card__icon {
 	align-items: center;
-	background-color: rgba(201, 226, 101, 0.12);
-	border: 1px solid rgba(201, 226, 101, 0.55);
-	color: #c9e265;
+	background-color: rgba(200, 227, 100, 0.12);
+	border: 1px solid rgba(200, 227, 100, 0.55);
+	color: #c8e364;
 	display: inline-flex;
 	height: clamp(2.25rem, 3vw, 3rem);
 	justify-content: center;
@@ -975,7 +974,7 @@
 		}
 
 		&:focus-visible {
-			outline: 2px solid #c9e265;
+			outline: 2px solid #c8e364;
 			outline-offset: 4px;
 		}
 	}
@@ -984,13 +983,13 @@
 		summary {
 			&:hover,
 			&:focus-visible {
-				background-color: rgba(201, 226, 101, 0.07);
+				background-color: rgba(200, 227, 100, 0.07);
 			}
 		}
 	}
 
 	&[open] {
-		background-color: rgba(201, 226, 101, 0.07);
+		background-color: rgba(200, 227, 100, 0.07);
 
 		summary {
 			&::after {
@@ -1016,7 +1015,7 @@
 .aiv-home-contact {
 	background:
 		linear-gradient(180deg, #050505 0%, rgba(5, 5, 5, 0) 18%, rgba(5, 5, 5, 0) 82%, #050505 100%),
-		radial-gradient(ellipse at 78% 46%, rgba(201, 226, 101, 0.13), transparent 34rem),
+		radial-gradient(ellipse at 78% 46%, rgba(200, 227, 100, 0.13), transparent 34rem),
 		linear-gradient(180deg, #050505 0%, #101010 52%, #050505 100%),
 		#050505;
 	color: var(--wp--preset--color--contrast);
@@ -1065,7 +1064,7 @@
 
 .aiv-home-contact__note,
 .aiv-home-contact__missing {
-	border-left: 2px solid #c9e265;
+	border-left: 2px solid #c8e364;
 	color: color-mix(in srgb, var(--wp--preset--color--contrast) 72%, transparent);
 	font-size: 0.95rem;
 	line-height: 1.5;
@@ -1083,7 +1082,7 @@
 	position: relative;
 
 	&::before {
-		background: linear-gradient(135deg, rgba(201, 226, 101, 0.11), transparent 46%);
+		background: linear-gradient(135deg, rgba(200, 227, 100, 0.11), transparent 46%);
 		content: "";
 		inset: 0;
 		opacity: 0.85;
@@ -1126,8 +1125,8 @@
 		&:focus-visible,
 		&:focus {
 			background-color: rgba(255, 255, 255, 0.055);
-			border-color: rgba(201, 226, 101, 0.72);
-			box-shadow: 0 0 0 3px rgba(201, 226, 101, 0.12);
+			border-color: rgba(200, 227, 100, 0.72);
+			box-shadow: 0 0 0 3px rgba(200, 227, 100, 0.12);
 		}
 	}
 
@@ -1166,20 +1165,20 @@
 			width: 1px;
 
 			&:checked + span {
-				background-color: rgba(201, 226, 101, 0.1);
-				border-color: rgba(201, 226, 101, 0.72);
-				box-shadow: 0 0 0 3px rgba(201, 226, 101, 0.08);
+				background-color: rgba(200, 227, 100, 0.1);
+				border-color: rgba(200, 227, 100, 0.72);
+				box-shadow: 0 0 0 3px rgba(200, 227, 100, 0.08);
 				color: var(--wp--preset--color--contrast);
 
 				&::before {
-					background-color: #c9e265;
-					box-shadow: 0 0 8px rgba(201, 226, 101, 0.7);
+					background-color: #c8e364;
+					box-shadow: 0 0 8px rgba(200, 227, 100, 0.7);
 				}
 			}
 
 			&:focus-visible + span {
-				border-color: rgba(201, 226, 101, 0.72);
-				box-shadow: 0 0 0 3px rgba(201, 226, 101, 0.12);
+				border-color: rgba(200, 227, 100, 0.72);
+				box-shadow: 0 0 0 3px rgba(200, 227, 100, 0.12);
 				outline: none;
 			}
 
@@ -1218,7 +1217,7 @@
 		&:hover {
 			span {
 				background-color: rgba(255, 255, 255, 0.055);
-				border-color: rgba(201, 226, 101, 0.42);
+				border-color: rgba(200, 227, 100, 0.42);
 				color: var(--wp--preset--color--contrast);
 			}
 		}
@@ -1236,7 +1235,7 @@
 		--shine-btn-bg: #18181a;
 		--shine-btn-bg-subtle: #2a2a2d;
 		--shine-btn-dot: white;
-		--shine-btn-highlight: #c9e265;
+		--shine-btn-highlight: #c8e364;
 		--shine-btn-highlight-subtle: #dcec93;
 		--transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 		animation: var(--animation) var(--duration), var(--animation) calc(var(--duration) / 0.4) reverse paused;
@@ -1326,7 +1325,7 @@
 		}
 
 		&:focus-visible {
-			outline: 2px solid #c9e265;
+			outline: 2px solid #c8e364;
 			outline-offset: 4px;
 		}
 
@@ -1345,8 +1344,8 @@
 	}
 
 	:is(.success, [class*="success"]) {
-		background-color: rgba(201, 226, 101, 0.1);
-		border-color: rgba(201, 226, 101, 0.38);
+		background-color: rgba(200, 227, 100, 0.1);
+		border-color: rgba(200, 227, 100, 0.38);
 	}
 
 	:is(.error, [class*="error"], [role="alert"]) {
@@ -1359,8 +1358,8 @@
 	.aiv-service-row {
 		&:hover {
 			background-color: rgba(255, 255, 255, 0.055);
-			border-color: rgba(201, 226, 101, 0.72);
-			box-shadow: 0 1.1rem 3rem rgba(201, 226, 101, 0.08), 0 1.5rem 4rem rgba(0, 0, 0, 0.24);
+			border-color: rgba(200, 227, 100, 0.72);
+			box-shadow: 0 1.1rem 3rem rgba(200, 227, 100, 0.08), 0 1.5rem 4rem rgba(0, 0, 0, 0.24);
 			transform: translateY(-0.25rem);
 
 			&::before {
@@ -1369,7 +1368,7 @@
 
 			.aiv-service-row__index,
 			.aiv-service-row__arrow {
-				color: #c9e265;
+				color: #c8e364;
 			}
 
 			.aiv-service-row__arrow {
@@ -1426,8 +1425,8 @@
 			transform: translateY(0);
 
 			.aiv-approach-marker {
-				background-color: #c9e265;
-				box-shadow: 0 0 18px rgba(201, 226, 101, 0.36);
+				background-color: #c8e364;
+				box-shadow: 0 0 18px rgba(200, 227, 100, 0.36);
 				transform: translate(-50%, -50%) scale(1.22);
 			}
 
@@ -1621,7 +1620,7 @@
 		transition: none;
 
 		.aiv-approach-marker {
-			background-color: #c9e265;
+			background-color: #c8e364;
 			transform: translate(-50%, -50%) scale(1);
 		}
 	}

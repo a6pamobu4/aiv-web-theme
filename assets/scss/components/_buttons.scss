@@ -335,7 +335,7 @@
 	--border-strong: rgba(255, 255, 255, 0.16);
 	--easing: cubic-bezier(0.16, 1, 0.3, 1);
 	--font-body: "Switzer", system-ui, sans-serif;
-	--signal: #c9e265;
+	--signal: #c8e364;
 	--text: #fafafa;
 	animation: rise 1s var(--easing) 1.15s both;
 	gap: 0.85rem;
@@ -345,7 +345,7 @@
 	--animation: gradient-angle linear infinite;
 	--duration: 6s;
 	--font-body: var(--wp--preset--font-family--system-sans);
-	--signal: #c9e265;
+	--signal: #c8e364;
 	--shadow-size: 2px;
 	--shine-btn-bg: #18181a;
 	--shine-btn-bg-subtle: #2a2a2d;
@@ -524,7 +524,7 @@
 
 .btn-dot {
 	background: var(--signal);
-	box-shadow: 0 0 8px rgba(201, 226, 101, 0.7);
+	box-shadow: 0 0 8px rgba(200, 227, 100, 0.7);
 	flex-shrink: 0;
 	height: 6px;
 	width: 6px;

@@ -105,7 +105,7 @@
 
 		&:hover,
 		&:focus-visible {
-			color: #c9e265;
+			color: #c8e364;
 			text-decoration: none;
 		}
 
@@ -116,7 +116,7 @@
 		}
 
 		&:focus-visible {
-			outline: 2px solid #c9e265;
+			outline: 2px solid #c8e364;
 			outline-offset: 0.45rem;
 		}
 	}
@@ -124,7 +124,7 @@
 	.current-menu-item,
 	.wp-block-navigation-item.current-menu-item {
 		> a {
-			color: #c9e265;
+			color: #c8e364;
 
 			&::after {
 				transform: scaleX(1);
