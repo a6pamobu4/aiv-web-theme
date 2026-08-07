@@ -3,7 +3,58 @@
 
 	var header = document.querySelector('.aiv-site-header');
 
-	if (!header || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+	if (!header) {
+		return;
+	}
+
+	var menuToggle = header.querySelector('.aiv-site-header__menu-toggle');
+	var menu = header.querySelector('.aiv-site-header__nav');
+	var desktop = window.matchMedia('(min-width: 64em)');
+
+	function setMenuOpen(isOpen) {
+		if (!menuToggle || !menu) {
+			return;
+		}
+
+		header.classList.toggle('is-menu-open', isOpen);
+		menuToggle.setAttribute('aria-expanded', String(isOpen));
+		menuToggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+	}
+
+	if (menuToggle && menu) {
+		menuToggle.addEventListener('click', function () {
+			setMenuOpen(!header.classList.contains('is-menu-open'));
+		});
+
+		menu.addEventListener('click', function (event) {
+			if (event.target.closest('a')) {
+				setMenuOpen(false);
+			}
+		});
+
+		document.addEventListener('click', function (event) {
+			if (!header.contains(event.target)) {
+				setMenuOpen(false);
+			}
+		});
+
+		document.addEventListener('keydown', function (event) {
+			if (event.key === 'Escape' && header.classList.contains('is-menu-open')) {
+				setMenuOpen(false);
+				menuToggle.focus();
+			}
+		});
+
+		if (desktop.addEventListener) {
+			desktop.addEventListener('change', function (event) {
+				if (event.matches) {
+					setMenuOpen(false);
+				}
+			});
+		}
+	}
+
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 		return;
 	}
 

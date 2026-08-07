@@ -142,18 +142,59 @@
 
 .aiv-site-footer__nav--legal {
 	justify-self: end;
+	padding-right: 4rem;
 }
 
 @include settings.breakpoint-down(lg) {
 	.aiv-site-footer__top {
 		align-items: start;
+		display: grid !important;
 		grid-template-columns: 1fr;
+		justify-items: center;
+		text-align: center;
 	}
 
 	.aiv-site-footer__brand,
 	.aiv-site-footer__nav--primary,
 	.aiv-site-footer__nav--legal {
-		justify-self: start;
+		justify-self: center;
+	}
+
+	.aiv-site-footer__nav {
+		align-items: center !important;
+		width: min(100%, 32rem);
+
+		.aiv-menu,
+		ul,
+		.wp-block-navigation__container {
+			align-items: center;
+		}
+	}
+
+	.aiv-site-footer__nav--legal {
+		border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 14%, transparent);
+		padding-right: 0;
+		padding-top: var(--wp--preset--spacing--50);
+	}
+
+	.aiv-site-footer__nav--primary {
+		border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 14%, transparent);
+		padding-top: var(--wp--preset--spacing--50);
+	}
+
+	.aiv-site-footer__copyright {
+		justify-self: center;
+		text-align: center;
+	}
+}
+
+@include settings.breakpoint-down(md) {
+	.aiv-site-footer {
+		padding-bottom: calc(var(--wp--preset--spacing--70) + 4.5rem);
+	}
+
+	.aiv-site-footer__nav--legal {
+		padding-right: 0;
 	}
 }
 

@@ -40,9 +40,8 @@
 					<span class="aiv-typewriter__reserve"><?php echo esc_html_x( 'масштабируемые', 'Homepage hero longest typewriter word', 'aiv-web' ); ?></span>
 					<span class="aiv-typewriter__text" data-typewriter-text><?php echo esc_html_x( 'быстрые', 'Homepage hero first typewriter word', 'aiv-web' ); ?></span>
 				</span>
-				<?php echo esc_html_x( 'сайты', 'Homepage hero heading mobile second line suffix', 'aiv-web' ); ?>
 			</span>
-			<span class="aiv-home-hero__title-line aiv-home-hero__title-line--mobile"><?php echo esc_html_x( 'для роста бизнеса', 'Homepage hero heading mobile third line', 'aiv-web' ); ?></span>
+			<span class="aiv-home-hero__title-line aiv-home-hero__title-line--mobile"><?php echo esc_html_x( 'сайты для роста бизнеса', 'Homepage hero heading mobile third line', 'aiv-web' ); ?></span>
 		</h1>
 		<!-- /wp:heading -->
 

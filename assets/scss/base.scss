@@ -5,6 +5,7 @@
 @use "components/footer";
 @use "components/floating-contacts";
 @use "sections/home";
+@use "sections/services";
 
 :root {
 	--aiv-content-gutter: #{settings.$content-gutter};

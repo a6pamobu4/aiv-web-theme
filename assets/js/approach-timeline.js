@@ -33,17 +33,25 @@
 		});
 	}
 
+	function resetStaticState(section) {
+		var items = Array.prototype.slice.call(section.querySelectorAll('[data-approach-item]'));
+
+		section.style.setProperty('--approach-progress', '1');
+		items.forEach(function (item) {
+			item.classList.remove('is-active', 'is-before');
+		});
+	}
+
 	function updateSection(section) {
+		if (!desktop.matches || reduceMotion.matches) {
+			return;
+		}
+
 		var items = section.querySelectorAll('[data-approach-item]');
 		var rect = section.getBoundingClientRect();
 		var scrollDistance = Math.max(rect.height - window.innerHeight, 1);
 		var progress = clamp(-rect.top / scrollDistance, 0, 1);
 		var activeIndex = Math.min(items.length - 1, Math.floor(progress * items.length));
-
-		if (!desktop.matches || reduceMotion.matches) {
-			setActive(section, 0, 1);
-			return;
-		}
 
 		setActive(section, activeIndex, progress);
 	}
@@ -68,12 +76,32 @@
 		});
 		observers = [];
 
-		if (desktop.matches || reduceMotion.matches || !('IntersectionObserver' in window)) {
+		if (reduceMotion.matches) {
+			sections.forEach(function (section) {
+				resetStaticState(section);
+				section.querySelectorAll('[data-approach-item]').forEach(function (item) {
+					item.classList.add('is-visible');
+				});
+			});
+			return;
+		}
+
+		if (desktop.matches) {
 			return;
 		}
 
 		sections.forEach(function (section) {
 			var items = Array.prototype.slice.call(section.querySelectorAll('[data-approach-item]'));
+
+			resetStaticState(section);
+
+			if (!('IntersectionObserver' in window)) {
+				items.forEach(function (item) {
+					item.classList.add('is-visible');
+				});
+				return;
+			}
+
 			var observer = new IntersectionObserver(
 				function (entries) {
 					entries.forEach(function (entry) {
@@ -106,7 +134,10 @@
 			setupMobileReveal();
 			requestUpdate();
 		});
-		reduceMotion.addEventListener('change', requestUpdate);
+		reduceMotion.addEventListener('change', function () {
+			setupMobileReveal();
+			requestUpdate();
+		});
 	}
 
 	window.addEventListener('pagehide', function () {

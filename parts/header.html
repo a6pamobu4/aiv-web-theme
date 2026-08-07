@@ -9,12 +9,20 @@
 		<!-- /wp:group -->
 
 		<!-- wp:shortcode -->
-		[aiv_web_menu location="primary" class="aiv-site-header__nav" aria_label="Primary menu"]
+		[aiv_web_menu location="primary" class="aiv-site-header__nav" id="aiv-primary-menu" aria_label="Primary menu"]
 		<!-- /wp:shortcode -->
 
-		<!-- wp:html -->
-		<div class="aiv-site-header__actions"><a href="#contact" class="shine-btn"><span>Обсудить проект</span></a></div>
-		<!-- /wp:html -->
+		<!-- wp:group {"className":"aiv-site-header__controls","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+		<div class="wp-block-group aiv-site-header__controls">
+			<!-- wp:html -->
+			<div class="aiv-site-header__actions"><a href="#contact" class="shine-btn"><span>Обсудить проект</span></a></div>
+			<!-- /wp:html -->
+
+			<!-- wp:html -->
+			<button class="aiv-site-header__menu-toggle" type="button" aria-expanded="false" aria-controls="aiv-primary-menu" aria-label="Открыть меню"><span class="aiv-site-header__menu-icon" aria-hidden="true"></span></button>
+			<!-- /wp:html -->
+		</div>
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
 </div>

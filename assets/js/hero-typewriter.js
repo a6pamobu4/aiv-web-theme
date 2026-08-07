@@ -7,9 +7,23 @@
 	var deleteSpeed = 35;
 	var pauseDelay = 1200;
 	var timers = [];
+	var resizeFrame = 0;
 
 	if (!groups.length) {
 		return;
+	}
+
+	function updateLineOffset(group, target) {
+		var reserve = group.querySelector('.aiv-typewriter__reserve');
+		var line = group.closest('.aiv-home-hero__title-line');
+
+		if (!reserve || !line) {
+			return;
+		}
+
+		var unusedWidth = Math.max(reserve.getBoundingClientRect().width - target.getBoundingClientRect().width, 0);
+
+		line.style.setProperty('--typewriter-line-offset', unusedWidth / 2 + 'px');
 	}
 
 	function setText(group, value) {
@@ -20,6 +34,7 @@
 		}
 
 		target.textContent = value;
+		updateLineOffset(group, target);
 	}
 
 	function getWords(group) {
@@ -91,7 +106,21 @@
 		}
 	});
 
+	window.addEventListener('resize', function () {
+		window.cancelAnimationFrame(resizeFrame);
+		resizeFrame = window.requestAnimationFrame(function () {
+			groups.forEach(function (group) {
+				var target = group.querySelector('[data-typewriter-text]');
+
+				if (target) {
+					updateLineOffset(group, target);
+				}
+			});
+		});
+	});
+
 	window.addEventListener('pagehide', function () {
+		window.cancelAnimationFrame(resizeFrame);
 		timers.forEach(function (timer) {
 			window.clearTimeout(timer);
 		});

@@ -61,6 +61,7 @@ function aiv_web_render_menu_shortcode( array $atts ): string {
 		array(
 			'location'    => 'primary',
 			'class'       => '',
+			'id'          => '',
 			'aria_label'  => '',
 			'orientation' => 'horizontal',
 		),
@@ -68,9 +69,10 @@ function aiv_web_render_menu_shortcode( array $atts ): string {
 		'aiv_web_menu'
 	);
 
-	$location    = sanitize_key( $atts['location'] );
-	$orientation = 'vertical' === $atts['orientation'] ? 'vertical' : 'horizontal';
-	$class_parts = preg_split( '/\s+/', $atts['class'] );
+	$location     = sanitize_key( $atts['location'] );
+	$orientation  = 'vertical' === $atts['orientation'] ? 'vertical' : 'horizontal';
+	$container_id = sanitize_html_class( $atts['id'] );
+	$class_parts  = preg_split( '/\s+/', $atts['class'] );
 
 	if ( false === $class_parts ) {
 		$class_parts = array();
@@ -95,6 +97,7 @@ function aiv_web_render_menu_shortcode( array $atts ): string {
 			'theme_location'       => $location,
 			'container'            => 'nav',
 			'container_class'      => $class_names,
+			'container_id'         => $container_id,
 			'container_aria_label' => $atts['aria_label'] ? esc_attr( $atts['aria_label'] ) : '',
 			'menu_class'           => 'aiv-menu aiv-menu--' . $orientation,
 			'depth'                => 1,

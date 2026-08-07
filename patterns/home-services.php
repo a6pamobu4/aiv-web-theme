@@ -17,7 +17,7 @@
 	</div>
 
 	<div class="aiv-services__list">
-		<a class="aiv-service-row" href="#contact" aria-label="<?php echo esc_attr_x( 'Обсудить разработку сайта', 'Service card action label', 'aiv-web' ); ?>">
+		<a class="aiv-service-row" href="<?php echo esc_url( home_url( '/services/website-development/' ) ); ?>" aria-label="<?php echo esc_attr_x( 'Подробнее о разработке сайтов', 'Service card action label', 'aiv-web' ); ?>">
 			<span class="aiv-service-row__index">01</span>
 			<span class="aiv-service-row__arrow" aria-hidden="true">→</span>
 			<span class="aiv-service-row__body">
@@ -28,7 +28,7 @@
 			<span class="aiv-tags aiv-service-row__tags"><span>UX/UI</span><span>SEO-ready</span><span>Performance</span><span>CMS</span></span>
 		</a>
 
-		<a class="aiv-service-row" href="#contact" aria-label="<?php echo esc_attr_x( 'Обсудить SEO-продвижение', 'Service card action label', 'aiv-web' ); ?>">
+		<a class="aiv-service-row" href="<?php echo esc_url( home_url( '/services/seo/' ) ); ?>" aria-label="<?php echo esc_attr_x( 'Подробнее о SEO-продвижении', 'Service card action label', 'aiv-web' ); ?>">
 			<span class="aiv-service-row__index">02</span>
 			<span class="aiv-service-row__arrow" aria-hidden="true">→</span>
 			<span class="aiv-service-row__body">
@@ -39,7 +39,7 @@
 			<span class="aiv-tags aiv-service-row__tags"><span>SEO-аудит</span><span>Семантика</span><span>Структура</span><span>Контент</span></span>
 		</a>
 
-		<a class="aiv-service-row" href="#contact" aria-label="<?php echo esc_attr_x( 'Обсудить контекстную рекламу', 'Service card action label', 'aiv-web' ); ?>">
+		<a class="aiv-service-row" href="<?php echo esc_url( home_url( '/services/contextual-advertising/' ) ); ?>" aria-label="<?php echo esc_attr_x( 'Подробнее о контекстной рекламе', 'Service card action label', 'aiv-web' ); ?>">
 			<span class="aiv-service-row__index">03</span>
 			<span class="aiv-service-row__arrow" aria-hidden="true">→</span>
 			<span class="aiv-service-row__body">
@@ -50,7 +50,7 @@
 			<span class="aiv-tags aiv-service-row__tags"><span>Яндекс Директ</span><span>Google Ads</span><span>Аналитика</span><span>Конверсии</span></span>
 		</a>
 
-		<a class="aiv-service-row" href="#contact" aria-label="<?php echo esc_attr_x( 'Обсудить поддержку сайта', 'Service card action label', 'aiv-web' ); ?>">
+		<a class="aiv-service-row" href="<?php echo esc_url( home_url( '/services/maintenance/' ) ); ?>" aria-label="<?php echo esc_attr_x( 'Подробнее о поддержке и развитии сайта', 'Service card action label', 'aiv-web' ); ?>">
 			<span class="aiv-service-row__index">04</span>
 			<span class="aiv-service-row__arrow" aria-hidden="true">→</span>
 			<span class="aiv-service-row__body">
