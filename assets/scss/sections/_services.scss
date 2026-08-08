@@ -20,7 +20,9 @@
 		#050505;
 	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 12%, transparent);
 	display: flex;
-	min-height: 100svh;
+	height: 100svh;
+	min-height: 44rem;
+	overflow: hidden;
 	padding: clamp(7.5rem, 10vw, 9rem) var(--aiv-content-gutter) clamp(3.5rem, 6vw, 5.5rem);
 	position: relative;
 }
@@ -66,32 +68,128 @@
 	margin-top: 0.15rem;
 }
 
-.aiv-services-hero__visual {
-	align-self: stretch;
-	display: grid;
-	margin: 0;
-	max-height: calc(100svh - 8rem);
-	min-height: 32rem;
+.aiv-services-hero__motion {
+	inset: 0;
+	mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.32), #000 48%, #000 100%);
 	overflow: hidden;
-	place-items: center;
-	position: relative;
+	pointer-events: none;
+	position: absolute;
+	z-index: 0;
 
-	&::before {
-		background: radial-gradient(circle, rgba(200, 227, 100, 0.12), transparent 64%);
+	&::before,
+	&::after {
 		content: "";
-		inset: 8% -8%;
 		pointer-events: none;
 		position: absolute;
 	}
 
-	img {
-		height: 100%;
-		mask-image: linear-gradient(180deg, transparent 0%, #000 9%, #000 88%, transparent 100%);
-		max-height: inherit;
-		object-fit: contain;
-		position: relative;
-		width: 100%;
-		z-index: 1;
+	&::before {
+		animation: aiv-services-motion-glow 7s ease-in-out infinite alternate;
+		background: radial-gradient(circle, rgba(200, 227, 100, 0.17), transparent 66%);
+		inset: -20% -10%;
+	}
+
+	&::after {
+		animation: aiv-services-motion-plane 9s ease-in-out infinite alternate;
+		background: linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(200, 227, 100, 0.015));
+		border-left: 1px solid rgba(255, 255, 255, 0.13);
+		border-right: 1px solid rgba(200, 227, 100, 0.22);
+		border-top: 1px solid rgba(255, 255, 255, 0.09);
+		height: 64%;
+		left: 24%;
+		mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 66%, transparent 100%);
+		top: 18%;
+		transform: perspective(42rem) rotateY(-18deg) rotateZ(-7deg);
+		width: 54%;
+	}
+
+	span {
+		animation: aiv-services-motion-signal 6.5s ease-in-out infinite;
+		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22) 28%, var(--wp--preset--color--primary) 72%, transparent);
+		height: 1px;
+		left: -12%;
+		opacity: 0;
+		position: absolute;
+		transform: rotate(-11deg) scaleX(0.25);
+		transform-origin: left center;
+		width: 118%;
+
+		&::after {
+			background-color: var(--wp--preset--color--primary);
+			box-shadow: 0 0 1rem rgba(200, 227, 100, 0.5);
+			content: "";
+			height: 0.35rem;
+			position: absolute;
+			right: 22%;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 0.35rem;
+		}
+
+		&:nth-child(1) {
+			animation-delay: -1s;
+			top: 22%;
+		}
+
+		&:nth-child(2) {
+			animation-delay: -4.4s;
+			top: 36%;
+		}
+
+		&:nth-child(3) {
+			animation-delay: -2.6s;
+			top: 50%;
+		}
+
+		&:nth-child(4) {
+			animation-delay: -5.7s;
+			top: 64%;
+		}
+
+		&:nth-child(5) {
+			animation-delay: -3.5s;
+			top: 78%;
+		}
+	}
+}
+
+@keyframes aiv-services-motion-signal {
+	from {
+		opacity: 0;
+		transform: rotate(-11deg) scaleX(0.2);
+	}
+
+	45%,
+	65% {
+		opacity: 0.72;
+		transform: rotate(-11deg) scaleX(0.72);
+	}
+
+	to {
+		opacity: 0;
+		transform: rotate(-11deg) scaleX(0.92);
+	}
+}
+
+@keyframes aiv-services-motion-plane {
+	from {
+		opacity: 0.55;
+		transform: perspective(42rem) rotateY(-16deg) rotateZ(-6deg);
+	}
+
+	to {
+		opacity: 0.9;
+		transform: perspective(42rem) rotateY(-16deg) rotateZ(-6deg);
+	}
+}
+
+@keyframes aiv-services-motion-glow {
+	from {
+		opacity: 0.55;
+	}
+
+	to {
+		opacity: 1;
 	}
 }
 
@@ -101,6 +199,7 @@
 
 @include settings.breakpoint-down(lg) {
 	.aiv-services-hero {
+		height: auto;
 		min-height: 100svh;
 		padding-bottom: 3.5rem;
 		padding-top: 7rem;
@@ -126,10 +225,20 @@
 		max-width: 38rem;
 	}
 
-	.aiv-services-hero__visual {
-		max-height: 24rem;
-		min-height: 18rem;
-		width: min(100%, 32rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.aiv-services-hero__motion {
+		&::before,
+		&::after,
+		span {
+			animation: none;
+		}
+
+		span {
+			opacity: 0.35;
+			transform: rotate(-11deg) scaleX(0.72);
+		}
 	}
 }
 
@@ -144,9 +253,4 @@
 		font-size: clamp(2.3rem, 11vw, 3.25rem);
 	}
 
-	.aiv-services-hero__visual {
-		max-height: 18rem;
-		min-height: 14rem;
-		width: min(100%, 25rem);
-	}
 }

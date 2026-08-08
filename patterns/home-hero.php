@@ -50,7 +50,7 @@
 		<!-- /wp:paragraph -->
 
 		<!-- wp:html -->
-		<div class="hero-actions"><a href="#contact" class="shine-btn" data-cta="hero-project-start"><span>Обсудить проект<!-- --> &nbsp;<!-- -->→</span></a><a href="#services" class="shine-btn" data-cta="hero-services-anchor"><span><span class="btn-dot" aria-hidden="true"></span>Наши услуги</span></a></div>
+		<div class="hero-actions"><a href="#contact" class="shine-btn" data-aiv-contact-modal-open data-cta="hero-project-start"><span>Обсудить проект<!-- --> &nbsp;<!-- -->→</span></a><a href="#services" class="shine-btn" data-cta="hero-services-anchor"><span><span class="btn-dot" aria-hidden="true"></span>Наши услуги</span></a></div>
 		<!-- /wp:html -->
 
 		<!-- wp:html -->

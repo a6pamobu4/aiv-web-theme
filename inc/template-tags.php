@@ -52,6 +52,48 @@ function aiv_web_render_copyright_shortcode(): string {
 add_shortcode( 'aiv_web_copyright', 'aiv_web_render_copyright_shortcode' );
 
 /**
+ * Render the reusable contact form modal.
+ */
+function aiv_web_render_contact_modal_shortcode(): string {
+	$has_page_form = is_front_page() || is_page( 'services' );
+
+	ob_start();
+	?>
+	<div class="aiv-contact-modal" data-aiv-contact-modal hidden>
+		<div class="aiv-contact-modal__backdrop" data-aiv-contact-modal-close></div>
+		<div class="aiv-contact-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="aiv-contact-modal-title">
+			<button class="aiv-contact-modal__close" type="button" data-aiv-contact-modal-close aria-label="<?php echo esc_attr_x( 'Закрыть форму', 'Contact modal close label', 'aiv-web' ); ?>">×</button>
+			<div class="aiv-contact-modal__header">
+				<p class="aiv-section-kicker"><?php echo esc_html_x( 'ОБСУДИТЬ ПРОЕКТ', 'Contact modal label', 'aiv-web' ); ?></p>
+				<h2 id="aiv-contact-modal-title" class="aiv-contact-modal__title"><?php echo esc_html_x( 'Расскажите о задаче', 'Contact modal title', 'aiv-web' ); ?></h2>
+				<p class="aiv-contact-modal__text"><?php echo esc_html_x( 'Коротко опишите проект — мы оценим формат, сроки и следующий шаг.', 'Contact modal text', 'aiv-web' ); ?></p>
+			</div>
+			<div class="aiv-contact-modal__form" data-aiv-contact-modal-mount>
+				<?php if ( ! $has_page_form ) : ?>
+					<div class="aiv-home-contact__form">
+						<?php if ( shortcode_exists( 'aiv_contact_form' ) ) : ?>
+							<?php
+							// The trusted AIV Contact plugin owns form processing and markup.
+							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							echo do_shortcode( '[aiv_contact_form]' );
+							?>
+						<?php else : ?>
+							<p><?php echo esc_html_x( 'Форма временно недоступна.', 'Missing contact form fallback', 'aiv-web' ); ?></p>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
+				<p class="aiv-contact-modal__success" data-aiv-contact-modal-success role="status" aria-live="polite"></p>
+			</div>
+		</div>
+	</div>
+	<?php
+	$output = ob_get_clean();
+
+	return false === $output ? '' : $output;
+}
+add_shortcode( 'aiv_web_contact_modal', 'aiv_web_render_contact_modal_shortcode' );
+
+/**
  * Render a registered WordPress menu location inside block template parts.
  *
  * @param array<string, string> $atts Shortcode attributes.

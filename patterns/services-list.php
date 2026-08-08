@@ -61,5 +61,9 @@
 			<span class="aiv-tags aiv-service-row__tags"><span>Поддержка</span><span>Доработки</span><span>Скорость</span><span>Безопасность</span></span>
 		</a>
 	</div>
+
+	<div class="aiv-services__cta">
+		<a class="shine-btn" href="#contact" data-aiv-contact-modal-open><span><?php echo esc_html_x( 'Обсудить проект', 'Services section action', 'aiv-web' ); ?> &nbsp;→</span></a>
+	</div>
 </section>
 <!-- /wp:html -->

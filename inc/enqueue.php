@@ -21,6 +21,10 @@ function aiv_web_enqueue_assets(): void {
 			'path' => 'assets/js/header-scroll.js',
 			'deps' => array(),
 		),
+		'aiv-web-contact-modal' => array(
+			'path' => 'assets/js/contact-modal.js',
+			'deps' => array(),
+		),
 	);
 
 	if ( is_front_page() ) {

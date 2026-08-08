@@ -1,0 +1,189 @@
+.aiv-contact-modal[hidden] {
+	display: none;
+}
+
+.aiv-contact-modal {
+	align-items: center;
+	display: grid;
+	inset: 0;
+	justify-items: center;
+	opacity: 0;
+	padding: clamp(1rem, 3vw, 2.5rem);
+	position: fixed;
+	transition: opacity 220ms ease;
+	z-index: 120;
+
+	&.is-open {
+		opacity: 1;
+
+		.aiv-contact-modal__dialog {
+			transform: translateY(0);
+		}
+	}
+}
+
+.aiv-contact-modal__backdrop {
+	background-color: rgba(0, 0, 0, 0.82);
+	backdrop-filter: blur(8px);
+	inset: 0;
+	position: absolute;
+}
+
+.aiv-contact-modal__dialog {
+	background:
+		linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+		#080808;
+	border: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 16%, transparent);
+	box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.52);
+	max-height: calc(100svh - clamp(2rem, 6vw, 5rem));
+	max-width: 58rem;
+	overflow-y: auto;
+	padding: clamp(1.25rem, 3vw, 2.25rem);
+	position: relative;
+	transform: translateY(1rem);
+	transition: transform 220ms ease;
+	width: 100%;
+	z-index: 1;
+}
+
+.aiv-contact-modal__header {
+	display: grid;
+	gap: 0.65rem;
+	margin-bottom: clamp(1rem, 2vw, 1.5rem);
+	padding-right: 3rem;
+}
+
+.aiv-contact-modal__title {
+	font-size: clamp(1.8rem, 3vw, 2.75rem);
+	line-height: 1;
+	margin: 0;
+}
+
+.aiv-contact-modal__text {
+	color: color-mix(in srgb, var(--wp--preset--color--contrast) 70%, transparent);
+	line-height: 1.5;
+	margin: 0;
+	max-width: 40rem;
+}
+
+.aiv-contact-modal__close {
+	align-items: center;
+	appearance: none;
+	background-color: transparent;
+	border: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 22%, transparent);
+	color: var(--wp--preset--color--contrast);
+	display: inline-flex;
+	font-size: 0;
+	height: 2.75rem;
+	justify-content: center;
+	line-height: 1;
+	padding: 0;
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+	width: 2.75rem;
+	z-index: 2;
+
+	&::before,
+	&::after {
+		background-color: currentColor;
+		content: "";
+		height: 2px;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		width: 1rem;
+	}
+
+	&::before {
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	&::after {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+
+	&:hover,
+	&:focus-visible {
+		background-color: rgba(200, 227, 100, 0.1);
+		border-color: var(--wp--preset--color--primary);
+		color: var(--wp--preset--color--primary);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--wp--preset--color--primary);
+		outline-offset: 3px;
+	}
+}
+
+.aiv-contact-modal__form {
+	position: relative;
+
+	.aiv-home-contact__form {
+		background: transparent;
+		border: 0;
+		box-shadow: none;
+		padding: 0;
+		transform: translateY(0);
+		transition: opacity 280ms ease, transform 280ms ease;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.aiv-contact-modal__success {
+	align-items: center;
+	color: var(--wp--preset--color--contrast);
+	display: flex;
+	font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+	font-weight: 750;
+	inset: 0;
+	justify-content: center;
+	line-height: 1.45;
+	margin: 0;
+	opacity: 0;
+	padding: clamp(2rem, 6vw, 5rem) 1rem;
+	pointer-events: none;
+	position: absolute;
+	text-align: center;
+	transform: translateY(0.75rem);
+	transition: opacity 280ms ease, transform 280ms ease;
+}
+
+.aiv-contact-modal.is-success {
+	.aiv-contact-modal__form > .aiv-home-contact__form {
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(-0.75rem);
+	}
+
+	.aiv-contact-modal__success {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+html.aiv-contact-modal-open,
+body.aiv-contact-modal-open {
+	overflow: hidden;
+}
+
+body.aiv-contact-modal-open {
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: var(--aiv-scroll-lock-offset, 0);
+	width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.aiv-contact-modal,
+	.aiv-contact-modal__dialog,
+	.aiv-contact-modal__form .aiv-home-contact__form,
+	.aiv-contact-modal__success {
+		transition: none;
+	}
+}
