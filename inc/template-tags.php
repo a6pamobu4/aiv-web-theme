@@ -55,7 +55,16 @@ add_shortcode( 'aiv_web_copyright', 'aiv_web_render_copyright_shortcode' );
  * Render the reusable contact form modal.
  */
 function aiv_web_render_contact_modal_shortcode(): string {
-	$has_page_form = is_front_page() || is_page( 'services' );
+	$has_page_form = is_front_page() || is_page(
+		array(
+			'services',
+			'contact',
+			'website-development',
+			'seo',
+			'contextual-advertising',
+			'maintenance',
+		)
+	);
 
 	ob_start();
 	?>

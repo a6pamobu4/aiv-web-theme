@@ -7,6 +7,9 @@
 @use "components/contact-modal";
 @use "sections/home";
 @use "sections/services";
+@use "sections/service-detail";
+@use "sections/contact-page";
+@use "sections/legal";
 
 :root {
 	--aiv-content-gutter: #{settings.$content-gutter};

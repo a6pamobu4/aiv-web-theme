@@ -210,6 +210,11 @@
 			"area": "footer",
 			"name": "footer",
 			"title": "Footer"
+		},
+		{
+			"area": "uncategorized",
+			"name": "legal-document",
+			"title": "Legal document"
 		}
 	]
 }

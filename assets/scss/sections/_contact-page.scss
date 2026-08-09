@@ -1,0 +1,378 @@
+@use "../settings";
+
+.aiv-contact-page {
+	background: #050505;
+	color: var(--wp--preset--color--contrast);
+	max-width: none;
+	overflow: clip;
+	width: 100%;
+
+	> * {
+		margin-left: 0;
+		margin-right: 0;
+		max-width: none;
+	}
+}
+
+.aiv-contact-hero {
+	align-items: center;
+	background:
+		linear-gradient(90deg, rgba(5, 5, 5, 0.97), rgba(5, 5, 5, 0.76)),
+		radial-gradient(circle at 78% 44%, rgba(200, 227, 100, 0.14), transparent 34rem),
+		#050505;
+	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 12%, transparent);
+	display: flex;
+	min-height: 100svh;
+	padding: clamp(7.5rem, 10vw, 9rem) var(--aiv-content-gutter) clamp(4rem, 7vw, 6rem);
+}
+
+.aiv-contact-hero__inner,
+.aiv-contact-page__section {
+	box-sizing: border-box;
+	margin: 0 auto;
+	max-width: var(--wp--style--global--wide-size);
+	width: 100%;
+}
+
+.aiv-contact-hero__inner {
+	align-items: end;
+	display: grid;
+	gap: clamp(3rem, 8vw, 9rem);
+	grid-template-columns: minmax(0, 1.1fr) minmax(24rem, 0.9fr);
+}
+
+.aiv-contact-hero__content {
+	display: grid;
+	gap: clamp(1.1rem, 2vw, 1.8rem);
+	justify-items: start;
+}
+
+.aiv-contact-hero__title {
+	font-size: clamp(2.45rem, 4.15vw, 4.75rem);
+	font-weight: 850;
+	letter-spacing: -0.04em;
+	line-height: 0.92;
+	margin: 0;
+	max-width: 12ch;
+	text-wrap: balance;
+}
+
+.aiv-contact-hero__text {
+	color: color-mix(in srgb, var(--wp--preset--color--contrast) 76%, transparent);
+	font-size: clamp(1.08rem, 1.35vw, 1.28rem);
+	line-height: 1.55;
+	margin: 0;
+	max-width: 42rem;
+}
+
+.aiv-contact-channels {
+	border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 18%, transparent);
+	display: grid;
+}
+
+.aiv-contact-channel {
+	align-items: center;
+	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 18%, transparent);
+	color: var(--wp--preset--color--contrast);
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+	padding: 1.35rem 0;
+	text-decoration: none;
+	transition: color 180ms ease, padding 180ms ease;
+
+	> span:first-child {
+		color: color-mix(in srgb, var(--wp--preset--color--contrast) 55%, transparent);
+		font-size: 0.75rem;
+		font-weight: 750;
+		text-transform: uppercase;
+	}
+
+	strong {
+		font-size: clamp(1rem, 1.3vw, 1.25rem);
+		min-width: 0;
+		overflow-wrap: anywhere;
+	}
+
+	> span:last-child {
+		font-size: 1.4rem;
+		transition: transform 180ms ease;
+	}
+
+	&:hover,
+	&:focus-visible {
+		color: var(--wp--preset--color--primary);
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+	}
+
+	&:hover > span:last-child,
+	&:focus-visible > span:last-child {
+		transform: translateX(0.25rem);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--wp--preset--color--primary);
+		outline-offset: 3px;
+	}
+}
+
+.aiv-contact-page__section {
+	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 12%, transparent);
+	max-width: calc(var(--wp--style--global--wide-size) + (var(--aiv-content-gutter) * 2));
+	padding: clamp(4.5rem, 8vw, 8rem) var(--aiv-content-gutter);
+}
+
+.aiv-contact-page__section-head {
+	display: grid;
+	gap: clamp(1rem, 2vw, 1.5rem);
+	margin-bottom: clamp(2.5rem, 5vw, 5rem);
+	max-width: 70rem;
+
+	h2 {
+		font-size: clamp(2rem, 3.4vw, 3.85rem);
+		font-weight: 820;
+		letter-spacing: 0;
+		line-height: 0.98;
+		margin: 0;
+		text-wrap: balance;
+	}
+
+	> p:last-child:not(.aiv-section-kicker) {
+		color: color-mix(in srgb, var(--wp--preset--color--contrast) 68%, transparent);
+		font-size: clamp(1rem, 1.2vw, 1.2rem);
+		line-height: 1.6;
+		margin: 0;
+		max-width: 48rem;
+	}
+}
+
+.aiv-contact-form-section {
+	background:
+		linear-gradient(180deg, #050505, transparent 18%, transparent 82%, #050505),
+		radial-gradient(circle at 72% 50%, rgba(200, 227, 100, 0.1), transparent 40rem);
+}
+
+.aiv-contact-form-section__form {
+	max-width: none;
+	width: 100%;
+}
+
+.aiv-contact-next__list {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		border-left: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 16%, transparent);
+		display: grid;
+		gap: 1rem;
+		padding: 0 clamp(1.5rem, 3vw, 3rem);
+
+		&:first-child {
+			border-left: 0;
+			padding-left: 0;
+		}
+
+		> span {
+			color: var(--wp--preset--color--primary);
+			font-size: 0.82rem;
+			font-weight: 800;
+		}
+
+		h3 {
+			font-size: clamp(1.35rem, 2vw, 2rem);
+			line-height: 1.08;
+			margin: 0;
+		}
+
+		p {
+			color: color-mix(in srgb, var(--wp--preset--color--contrast) 65%, transparent);
+			line-height: 1.6;
+			margin: 0;
+		}
+	}
+}
+
+.aiv-contact-info__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.aiv-contact-info__grid > div,
+.aiv-contact-info__details {
+	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 18%, transparent);
+	border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 18%, transparent);
+	display: grid;
+	gap: 0.75rem;
+	padding: 1.5rem clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.aiv-contact-info__grid > div {
+	border-right: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 18%, transparent);
+
+	> span,
+	p {
+		color: color-mix(in srgb, var(--wp--preset--color--contrast) 58%, transparent);
+	}
+
+	> span {
+		font-size: 0.75rem;
+		font-weight: 750;
+		text-transform: uppercase;
+	}
+
+	strong {
+		font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+	}
+
+	p {
+		line-height: 1.55;
+		margin: 0;
+	}
+}
+
+.aiv-contact-info__details {
+	color: var(--wp--preset--color--contrast);
+	grid-template-columns: 1fr auto;
+	text-decoration: none;
+	transition: background-color 180ms ease, color 180ms ease;
+
+	> span:first-child {
+		color: color-mix(in srgb, var(--wp--preset--color--contrast) 58%, transparent);
+		font-size: 0.75rem;
+		font-weight: 750;
+		grid-column: 1 / -1;
+		text-transform: uppercase;
+	}
+
+	strong {
+		font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+	}
+
+	> span:last-child {
+		font-size: 1.5rem;
+		transition: transform 180ms ease;
+	}
+
+	&:hover,
+	&:focus-visible {
+		background-color: rgba(200, 227, 100, 0.08);
+		color: var(--wp--preset--color--primary);
+	}
+
+	&:hover > span:last-child,
+	&:focus-visible > span:last-child {
+		transform: translateX(0.25rem);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--wp--preset--color--primary);
+		outline-offset: 3px;
+	}
+}
+
+@include settings.breakpoint-down(lg) {
+	.aiv-contact-hero__inner {
+		gap: 3rem;
+		grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.8fr);
+	}
+}
+
+@include settings.breakpoint-down(md) {
+	.aiv-contact-hero {
+		min-height: auto;
+		padding-bottom: 4rem;
+		padding-top: 8rem;
+		text-align: center;
+	}
+
+	.aiv-contact-hero__inner {
+		grid-template-columns: 1fr;
+	}
+
+	.aiv-contact-hero__content,
+	.aiv-contact-page__section-head {
+		justify-items: center;
+	}
+
+	.aiv-contact-hero__title,
+	.aiv-contact-hero__text {
+		max-width: 42rem;
+	}
+
+	.aiv-contact-page__section {
+		padding-bottom: 3.75rem;
+		padding-top: 3.75rem;
+	}
+
+	.aiv-contact-page__section-head {
+		margin-bottom: 2.5rem;
+		max-width: none;
+		text-align: center;
+	}
+
+	.aiv-contact-next__list,
+	.aiv-contact-info__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.aiv-contact-next__list li {
+		border-left: 0;
+		border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 16%, transparent);
+		padding: 1.5rem 0;
+		text-align: center;
+	}
+
+	.aiv-contact-info__grid > div,
+	.aiv-contact-info__details {
+		border-right: 0;
+		border-top: 0;
+		text-align: center;
+	}
+
+	.aiv-contact-info__grid > div:first-child {
+		border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 18%, transparent);
+	}
+
+	.aiv-contact-info__details {
+		justify-items: center;
+	}
+}
+
+@include settings.breakpoint-down(sm) {
+	.aiv-contact-hero__title {
+		font-size: clamp(1.95rem, 9.2vw, 3rem);
+		letter-spacing: -0.045em;
+		line-height: 0.94;
+	}
+
+	.aiv-contact-page__section-head h2 {
+		font-size: 2rem;
+	}
+
+	.aiv-contact-hero__content .shine-btn {
+		width: 100%;
+	}
+
+	.aiv-contact-channel {
+		gap: 0.5rem;
+		grid-template-columns: 1fr auto;
+		text-align: left;
+
+		> span:first-child {
+			grid-column: 1 / -1;
+		}
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.aiv-contact-channel,
+	.aiv-contact-info__details,
+	.aiv-contact-channel > span:last-child,
+	.aiv-contact-info__details > span:last-child {
+		transition: none;
+	}
+}

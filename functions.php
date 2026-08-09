@@ -17,6 +17,8 @@ $aiv_web_includes = array(
 	'inc/editor.php',
 	'inc/uploads.php',
 	'inc/template-tags.php',
+	'inc/service-detail.php',
+	'inc/contact-page.php',
 	'inc/woocommerce.php',
 );
 

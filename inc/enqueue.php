@@ -27,6 +27,15 @@ function aiv_web_enqueue_assets(): void {
 		),
 	);
 
+	$is_service_detail = is_page(
+		array(
+			'website-development',
+			'seo',
+			'contextual-advertising',
+			'maintenance',
+		)
+	);
+
 	if ( is_front_page() ) {
 		$script_assets['aiv-web-hero-typewriter'] = array(
 			'path' => 'assets/js/hero-typewriter.js',
@@ -45,6 +54,13 @@ function aiv_web_enqueue_assets(): void {
 			'deps' => array(),
 		);
 		$script_assets['aiv-web-faq-accordion']   = array(
+			'path' => 'assets/js/faq-accordion.js',
+			'deps' => array(),
+		);
+	}
+
+	if ( $is_service_detail ) {
+		$script_assets['aiv-web-faq-accordion'] = array(
 			'path' => 'assets/js/faq-accordion.js',
 			'deps' => array(),
 		);
