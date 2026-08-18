@@ -47,3 +47,29 @@ function aiv_web_setup(): void {
 	add_image_size( 'aiv-hero', 1600, 900, true );
 }
 add_action( 'after_setup_theme', 'aiv_web_setup' );
+
+/**
+ * Adds intrinsic dimensions to the SVG custom logo.
+ *
+ * WordPress cannot derive attachment dimensions from the uploaded SVG, so the
+ * browser otherwise reserves no space for the logo before the file loads.
+ *
+ * @param array<string, string> $attributes Image attributes.
+ * @param WP_Post               $attachment Attachment object.
+ * @return array<string, string>
+ */
+function aiv_web_add_custom_logo_dimensions( array $attributes, WP_Post $attachment ): array {
+	$custom_logo_id = (int) get_theme_mod( 'custom_logo' );
+
+	if ( $custom_logo_id !== (int) $attachment->ID ) {
+		return $attributes;
+	}
+
+	if ( empty( $attributes['width'] ) || empty( $attributes['height'] ) ) {
+		$attributes['width']  = '1031';
+		$attributes['height'] = '150';
+	}
+
+	return $attributes;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'aiv_web_add_custom_logo_dimensions', 10, 2 );
