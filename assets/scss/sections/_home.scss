@@ -283,17 +283,23 @@
 
 .aiv-home-hero__proof strong {
 	color: #c8e364;
-	display: inline-block;
+	display: inline-grid;
 	font-size: clamp(1.65rem, 2.55vw, 2.65rem);
 	font-weight: 850;
+	font-variant-numeric: tabular-nums;
+	justify-items: start;
 	letter-spacing: -0.035em;
 	line-height: 0.9;
 	text-transform: none;
+}
 
-	&[data-counter-value="100"],
-	&[data-counter-value="90"] {
-		min-width: 2.55ch;
-	}
+.aiv-home-hero__counter-output,
+.aiv-home-hero__counter-reserve {
+	grid-area: 1 / 1;
+}
+
+.aiv-home-hero__counter-reserve {
+	visibility: hidden;
 }
 
 .aiv-home-hero__proof-item > span {

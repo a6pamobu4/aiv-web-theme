@@ -10,6 +10,12 @@
 
 	function setCounter(counter, value) {
 		var suffix = counter.getAttribute('data-counter-suffix') || '';
+		var output = counter.querySelector('[data-counter-output]');
+
+		if (output) {
+			output.textContent = String(value) + suffix;
+			return;
+		}
 
 		counter.textContent = String(value) + suffix;
 	}

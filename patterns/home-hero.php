@@ -49,15 +49,24 @@
 		<!-- wp:html -->
 		<div class="aiv-home-hero__proof" aria-label="<?php echo esc_attr_x( 'Ключевые преимущества AIV-web', 'Homepage hero proof list label', 'aiv-web' ); ?>">
 			<div class="aiv-home-hero__proof-item">
-				<strong data-counter-value="12"><?php echo esc_html_x( '12', 'Homepage hero proof value', 'aiv-web' ); ?></strong>
+				<strong data-counter-value="12">
+					<span class="aiv-home-hero__counter-output" data-counter-output><?php echo esc_html_x( '12', 'Homepage hero proof value', 'aiv-web' ); ?></span>
+					<span class="aiv-home-hero__counter-reserve" aria-hidden="true"><?php echo esc_html_x( '12', 'Homepage hero proof value', 'aiv-web' ); ?></span>
+				</strong>
 				<span><?php echo esc_html_x( 'лет опыта', 'Homepage hero proof label', 'aiv-web' ); ?></span>
 			</div>
 			<div class="aiv-home-hero__proof-item">
-				<strong data-counter-value="100" data-counter-suffix="+"><?php echo esc_html_x( '100+', 'Homepage hero proof value', 'aiv-web' ); ?></strong>
+				<strong data-counter-value="100" data-counter-suffix="+">
+					<span class="aiv-home-hero__counter-output" data-counter-output><?php echo esc_html_x( '100+', 'Homepage hero proof value', 'aiv-web' ); ?></span>
+					<span class="aiv-home-hero__counter-reserve" aria-hidden="true"><?php echo esc_html_x( '100+', 'Homepage hero proof value', 'aiv-web' ); ?></span>
+				</strong>
 				<span><?php echo esc_html_x( 'сайтов', 'Homepage hero proof label', 'aiv-web' ); ?></span>
 			</div>
 			<div class="aiv-home-hero__proof-item">
-				<strong data-counter-value="90" data-counter-suffix="+"><?php echo esc_html_x( '90+', 'Homepage hero proof value', 'aiv-web' ); ?></strong>
+				<strong data-counter-value="90" data-counter-suffix="+">
+					<span class="aiv-home-hero__counter-output" data-counter-output><?php echo esc_html_x( '90+', 'Homepage hero proof value', 'aiv-web' ); ?></span>
+					<span class="aiv-home-hero__counter-reserve" aria-hidden="true"><?php echo esc_html_x( '90+', 'Homepage hero proof value', 'aiv-web' ); ?></span>
+				</strong>
 				<span><?php echo esc_html_x( 'PageSpeed', 'Homepage hero proof label', 'aiv-web' ); ?></span>
 			</div>
 		</div>
