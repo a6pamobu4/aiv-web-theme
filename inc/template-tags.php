@@ -51,11 +51,9 @@ function aiv_web_render_copyright_shortcode(): string {
 }
 add_shortcode( 'aiv_web_copyright', 'aiv_web_render_copyright_shortcode' );
 
-/**
- * Render the reusable contact form modal.
- */
-function aiv_web_render_contact_modal_shortcode(): string {
-	$has_page_form = is_front_page() || is_page(
+/** Whether the current page already renders a contact form before the footer. */
+function aiv_web_has_page_contact_form(): bool {
+	return is_front_page() || is_page(
 		array(
 			'services',
 			'contact',
@@ -65,6 +63,13 @@ function aiv_web_render_contact_modal_shortcode(): string {
 			'maintenance',
 		)
 	);
+}
+
+/**
+ * Render the reusable contact form modal.
+ */
+function aiv_web_render_contact_modal_shortcode(): string {
+	$has_page_form = aiv_web_has_page_contact_form();
 
 	ob_start();
 	?>
@@ -100,7 +105,19 @@ function aiv_web_render_contact_modal_shortcode(): string {
 
 	return false === $output ? '' : $output;
 }
-add_shortcode( 'aiv_web_contact_modal', 'aiv_web_render_contact_modal_shortcode' );
+/** Print the modal outside block rendering so wpautop cannot alter form markup. */
+function aiv_web_print_contact_modal(): void {
+	// The trusted theme shortcode renders the modal and the contact plugin's form.
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo aiv_web_render_contact_modal_shortcode();
+}
+add_action( 'wp_footer', 'aiv_web_print_contact_modal', 5 );
+
+/** Keep saved footer template overrides from printing the old shortcode. */
+function aiv_web_legacy_contact_modal_shortcode(): string {
+	return '';
+}
+add_shortcode( 'aiv_web_contact_modal', 'aiv_web_legacy_contact_modal_shortcode' );
 
 /**
  * Render a registered WordPress menu location inside block template parts.

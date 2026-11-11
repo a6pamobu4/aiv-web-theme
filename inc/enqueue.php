@@ -16,16 +16,34 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function aiv_web_enqueue_assets(): void {
 	$theme_version = wp_get_theme()->get( 'Version' );
+	$style_file    = get_theme_file_path( 'assets/css/base.css' );
+	$style_version = file_exists( $style_file ) ? (string) filemtime( $style_file ) : $theme_version;
+
+	// The modal's fallback shortcode is rendered in the footer, too late for its stylesheet to reach <head>.
+	if ( ! aiv_web_has_page_contact_form() && function_exists( 'aiv_contact_enqueue_assets' ) ) {
+		aiv_contact_enqueue_assets();
+	}
 	$script_assets = array(
-		'aiv-web-header-scroll' => array(
+		'aiv-web-header-scroll'     => array(
 			'path' => 'assets/js/header-scroll.js',
 			'deps' => array(),
 		),
-		'aiv-web-contact-modal' => array(
+		'aiv-web-contact-modal'     => array(
 			'path' => 'assets/js/contact-modal.js',
 			'deps' => array(),
 		),
+		'aiv-web-floating-contacts' => array(
+			'path' => 'assets/js/floating-contacts.js',
+			'deps' => array(),
+		),
 	);
+
+	if ( is_page( 'solutions' ) || is_page_template( 'page-solutions' ) ) {
+		$script_assets['aiv-web-solutions-catalog'] = array(
+			'path' => 'assets/js/solutions-catalog.js',
+			'deps' => array(),
+		);
+	}
 
 	$is_service_detail = is_page(
 		array(
@@ -70,7 +88,7 @@ function aiv_web_enqueue_assets(): void {
 		'aiv-web-style',
 		get_theme_file_uri( 'assets/css/base.css' ),
 		array(),
-		$theme_version
+		$style_version
 	);
 
 	foreach ( $script_assets as $handle => $script_asset ) {

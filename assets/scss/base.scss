@@ -10,6 +10,8 @@
 @use "sections/service-detail";
 @use "sections/contact-page";
 @use "sections/legal";
+@use "sections/about";
+@use "sections/solutions";
 
 :root {
 	--aiv-content-gutter: #{settings.$content-gutter};

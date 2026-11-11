@@ -124,7 +124,19 @@
 		flex-direction: row;
 		justify-content: center;
 		left: 0.75rem;
+		opacity: 0;
+		pointer-events: none;
 		right: 0.75rem;
+		transform: translateY(0.75rem);
+		transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+		visibility: hidden;
+
+		&.is-visible {
+			opacity: 1;
+			pointer-events: auto;
+			transform: none;
+			visibility: visible;
+		}
 	}
 
 	.aiv-floating-contacts__link {
@@ -133,4 +145,8 @@
 		height: 3rem;
 		width: 3rem;
 	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.aiv-floating-contacts { transition: none; }
 }

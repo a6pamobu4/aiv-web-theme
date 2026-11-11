@@ -19,6 +19,7 @@ $aiv_web_includes = array(
 	'inc/template-tags.php',
 	'inc/service-detail.php',
 	'inc/contact-page.php',
+	'inc/solutions.php',
 	'inc/woocommerce.php',
 );
 
